@@ -1,1 +1,1 @@
-# kingdoms_and_heroes
+# Kingdoms and Heroes
