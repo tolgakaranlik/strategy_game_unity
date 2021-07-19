@@ -48,7 +48,7 @@ public class GUIWelcome : MonoBehaviour
 
         WindowLogin.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
         WindowRegister.GetComponent<CanvasGroup>().DOFade(1, 0.3f).SetEase(Ease.Linear);
-        PlayButton.GetComponent<Image>().DOFade(0, 0.2f);
+        PlayButton.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
 
         StartCoroutine(DisableLoginWindow());
     }
