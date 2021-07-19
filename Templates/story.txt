@@ -1,0 +1,254 @@
+1. Açlık / Hunger
+  (-) 3 tarla inşa et
+2. Madenler / The Mines
+  (-) 3 maden inşa et
+3. Yaşasın Kral! / Longlive the King!
+  (-) Krallık merkezini seviye 3'e yükselt
+4. Krallığın İmarı / Construction of Kingdom
+  (-) 1 ağaç kesicisi inşa et
+  (-) Tarlaları seviye 2'ye yükselt
+  (-) Madenleri seviye 2'ye yükselt
+5. En İyi Savunma Saldırıdır / Offence is the Best Defence
+  (-) 1 taş ocağı inşa et
+  (-) Barracks inşa et
+  (-) 3 asker eğit
+  (-) 1 okçu eğit
+6. Kurtlar / The Wolves
+  (-) Ülkenin giriş yolunun aşağısında kurtlar ülkeye giren tüccarları rahatsız ediyor, mallarına zarar veriyor. Kurt inini temizle
+7. Haşmetli Büyücüler / Magnificent Magicians
+  (-) Spire inşa et
+  (-) 5 priest eğit
+  (-) 1 sorceress eğit
+8. Lanetli Orman / The Haunted Forest
+  (-) Ülkenin yanıbaşındaki ormandan geceleri garip sesler geliyormuş, hatta bu nedenle ülkenin insanları geceleri ülkeler arası yolculuk etmeye korkuyorlar. En iyi büyücülerini yanına al ve gidip orada neler döndüğünü araştır
+  (-) [Önce ormanın girişinde zayıf yaratıklar karşılarına çıkar ve saldırır] Saldırganları yoket
+  (-) [Saldırganların bir kısmı ormanın içine kaçar] Kaçanların peşinden git ve onları yakala [Saldırganlar bir harabeye sığınır ve orada savaşılır. Saldırganlardan birinin üstünden çıkan mektupla haritada yeni bir yer açılır]
+9. Sır Perdesi / Veil of Secrecy [Q8'i bitirmeyi gerektirir]
+  (-) (Haritada yeni çıkan) Gizemli harabelere saldır ve kötü yaratıklar oluşturan büyücüyü ortadan kaldır [kötü büyücü intikam söylemleriyle kaçar]
+10. Mesaj / The Message
+  (-) Komşu krallığın hükümdarı sana haber yollamış ve köyünü yerle bir edeceğini, tüm kaynaklarını da yağmalayacağını yazmış. Eğer sana gönderdiği elçinin başını bir çuval içinde geri göndermeseydin belki bu kadar sinirlenmezdi, fakat artık şehir surları inşa etsen iyi olur
+  (-) Şehir surları inşa et
+  (-) 2 savunma kulasi inşa et
+11. Kralın Yükselişi / Rise of the King
+  (-) Krallık merkezini seviye 5'e çıkar
+  (-) Tüm madenleri seviye 5'e çıkar
+  (-) Ağaç kesicisini seviye 5'e çıkar
+  (-) Taş ocağını seviye 5'e çıkar
+  (-) Tüm tarlaları seviye 5'e çıkar
+12. Şehir Surları / City Walls
+  (-) Şehir surlarını seviye 5'e çıkar
+  (-) Savunma kulelerini seviye 5'e çıkar
+  (-) Krallık merkezinden "Bina Dayanıklılığı" araştırmasını yap
+13. Yenilenlerin İntikamı / Revenge of the Fallen
+  (-) Casuslarımız geçen sefer işgali başarısızlıkla sonuçlanan komşu kralın yeniden saldırmak üzere olduğunu rapor ettiler. Bir an önce gerekli tedbirleri al! Bu kez her şeyiyle saldıracak çünkü...
+  (-) Savaşçılar (basic units) için Barracks'tan silah yükseltmesini yap
+  (-) Savaşçılar (basic units) için Barracks'tan kalkan yükseltmesini yap
+  (-) Büyücüler için Spire'dan büyü gücü arttırma yükseltmesini yap
+  (-) Büyücüler için Spire'dan mana arttırma yükseltmesini yap
+  (-) [tüm diğer görevler bittikten sonra] Ülkeni düşman krala karşı savun
+14. Geri Ödeme / The Payback
+  (-) Düşman kral tüm birliklerini geçen saldırıda harcadı, eğer onu yok etmek istiyorsan kendini toparlayamadan ona saldır! Eğer gücünü toparlarsa o zaman sana kesinlikle hayat hakkı tanımayacaktır...
+  (-) 3 mortar eğit
+  (-) 1 light cannon eğit
+  (-) 20 infantry eğit
+  (-) 10 archer eğit
+  (-) 5 priest eğit
+  (-) 5 sorceress eğit
+  (-) Düşman krallığı yoket
+15. Yaraları Sarmak / Covering Wounds
+  (-) Azalan ordu birliklerini yeniden tahkim et
+  (-) infantry sayını 20ye tamamla
+  (-) archer sayını 10a tamamla
+  (-) priest sayını 5e tamamla
+  (-) sorceress sayını 5e tamamla
+16. Kanlı Bir Mektup / A Letter with Blood On It
+  (-) Komşu krallıktan gelen mektupta kral kendisine yardım edersek bize yüklü bağış yapacağını söylüyor
+  (-) Yanıt seçeneklerimiz:
+    * Reddet (bu durumda karşı krallık bize düşman olur ve savaş açar)
+	* Miktarı kabul et
+	* Bedelsiz kabul et (bu durumda eğer savaşı kazanırsak bize ilk başta teklif ettiği miktarın 2 katını verir)
+	* Daha fazla iste (bu işlemi 2 kez tekrarlayabiliriz, 3. kez istedik mi bize savaş açar, bu durumda sonraki quest otomatik olarak onun saldırısını savuşturmak olur)
+  (-) Komşu krallığın savunmasına yardım et (burada ikili bir klan savunması örneği oynanır)
+17. Yarım Kalan Şeyler / Things Remained In Halfway
+  (-) Bir önceki görevde verdiğimiz yanıta göre eğer o krallıkla dost isek ona saldırana bu kez ikili klan saldırısı düzenleriz, yoksa ondan gelecek saldırıyı savunuruz
+  (-) Eğer komşu kralla dost isek:
+    (-) 1 casus eğit
+	(-) casusu düşman krallığa gönder
+	(-) komşu krallıkla beraber düşman krallığa saldır
+  (-) Eğer düşman iset:
+    (-) 1 casus eğit
+	(-) casusu komşu krallığa gönder
+	(-) komşu krallıktan gelen saldırıyı savuştur
+18. Yabancı Güvercin / Stranger Pigeon
+  (-) Taht odanızın penceresine konan bir güvercinin ayağındaki mesaj, yakınlardaki bir harabenin hapishanesinde barbarlar tarafından tutsak edilmiş bir Hero olduğunu ve bunun hapisten kurtarılmak karşılığında bir hazinenin yerini söyleyeceğini taahhüt eder
+  (-) Yanıt seçeneklerimiz:
+    * Reddet (bu durumda harabelere saldırıp yine barbarları temizleyebiliriz fakat bir daha o hero çıkmaz)
+	* Kabul et (bu durumda harabelere saldırdıktan sonra haritamızda orman içinde gizli bir mağara açılır)
+	* Kabul et ve bize katıl (bu durumda bir önceki duruma ilaveten hero da ekibimize katılır)
+19. Antik Mağara / The Ancient Cave
+  (-) Eğer önceki görevde hero'yu reddedersek bu görev çıkmaz
+  (-) Sırayla 3 mağarada düşmanları yenerek büyük bir hazine alıp içinde rare ya da unique bir item buluruz
+20. Kahramanlık Zamanı / Heroism Time
+  (-) Taverna'yı seviye 2'ye getir
+  (-) Bir hero işe al
+  (-) Yeni hero'yu level 3'e ulaştır
+21. Gizemli Goblin İcadı / Mysterious Goblin Invention
+  (-) Söylentilere göre goblinler dağ geçidinde büyük bir silah yapıyorlarmış. Bir casus gönder ve orada ne döndüğünü öğren
+  (-) Goblinler casusu öldürdü, kuvvetli bir ordu toplayıp goblinlere saldır
+  (-) Goblin kampına vardığımızda goblinler onları bağışlamamız karşılığında yüklü hazine teklif ederler ve oryaı terk etmeyi taahhüt ederler. Seçeneklerimiz:
+    * Kabul et (hazineyi alırız ve goblinler gider)
+	* Miktarı arttır (goblinler %20 fazlasını verir ve giderler)
+	* Reddet. Bu kez Goblin yeni bir teklifte bulunur:
+	  (-) Size silahımızın şemasını ve prototipini bırakalım, bizi öldürürseniz elinize bir şey geçmez. Seçeneklerimiz:
+	    * Kabul et (Workshop'ta yeni research açılır: improved efficiency ve goblinler gider)
+		* Üstüne para iste (Goblinler bir miktar para teklif eder) Seçenekler:
+		  * Kabul et (Workshop'ta yeni research açılır: improved efficiency ve goblinler parayı ödeyip gider)
+		  * Miktarı yükselt (savaş başlar)
+		* Reddet (savaş başlar)
+	  (-) Savaş başlarsa workshop güncellemesi alınamaz ve çok daha düşük bir para kazanılır
+22. Gençlik İksiri / Potion of Youth
+  (-) Sarayınızın büyücüsü gelip antik bir karışım tarifi bulduğunu, bunu yaparak savaşlarda güç kazandıracak bir gençlik iksiri yapabileceğini söyler. Ancak bu iksir için gereken malzemeler 2 farklı yerdeki barbar kamplarındadır. Bu malzemelerin bulunması gerekmektedir. İki kamp sırayla bir öncekinden zorlaşacaktır
+  (-) Gerekli malzemelerin birisi de ülkedeki dükkandan alınmalıdır. O nedenle bir dükkan inşa edilmelidir
+  (-) Dükkandaki malzeme sadece dükkan seviye 2'de çıkmaktadır, o nedenle dükkanın seviye 2'ye getirilmesi gerekmektedir.
+  (-) Malzemeler toplandığında artık ülkelerdeki dükkanlardan Rejuvenation Potion (aynı anda hem health hem mana yükselten iksir) yapılabilir
+23. Kış Geliyor / Winter Is Coming
+  (-) Kış hazırlıkları nedeniyle 1000 odun depolanması gerekiyor. 1000 odun depola
+  (-) Hayvanları kurak mevsimde otlatabilmek için 1000 buğday depolamak gerekiyor. 1000 buğday depola
+  (-) Kışın madenlere girmek zor olacağı için kış gelmeden 1000 maden depolamak gerekiyor. 1000 maden depola
+24. Hayalet Büyücünün Gizemi - Kısım I / Mystery of the Ghost Wizard - Part I
+  (-) Bir büyücünün hayaleti ülkenizde çeşitli kişilere görünerek krallığınızın hemen dışındaki mezarlıktan bahsediyormuş. Ne olduğuna baksanız iyi olur
+  (-) Bu göreve giderken ülkenizin kralından başka hiçbir ünite mezarlığa sizinle gelmeyi kabul etmez, oraya teş başınıza gidebilirsiniz
+  (-) Gittiğinizde yaşlı büyücünün hayaleti size de görünür ve çırağının ihanetine uğradığını, onun intikamını almanızı ister. Karşılığında çeşitli seviyelerden büyüler öğreneceksiniz. Bu görevleri kabul ediyoruz ve 4 yeni görev biri bittikçe öbürü şeklinde sırayla açılıyor
+25. Hayalet Büyücünün Gizemi - Kısım II / Mystery of the Ghost Wizard - Part II
+  (-) Büyücünün çırağı Büyücünün krallığında çökmüştür ve geleceğinizin haberini almıştır. Bu nedenle ülkesinin etrafını büyülenmiş askerlerle çevrelemiştir
+  (-) Çırağın krallık dışında konumlandırdığı 3 kampı yoket
+  (-) Ödül olarak tüm herolar tüm seviye 1 büyülerini öğrenirler
+26. Hayalet Büyücünün Gizemi - Kısım III / Mystery of the Ghost Wizard - Part III
+  (-) Büyücünün çırağı ordusunu güçlendirmek için krallığının etrafındaki mezarlıklardan iskelet orduları devşirmektedir. Bu faaliyeti durdur
+  (-) Herolardan başka hiçbir birlik mezarlığa gitmeyi kabul etmez
+  (-) Ödül olarak tüm herolar tüm seviye 2 büyülerini öğrenirler
+27. Hayalet Büyücünün Gizemi - Kısım IV / Mystery of the Ghost Wizard - Part IV
+  (-) Büyücünün çırağı'nın krallığına saldır ve onu yoket
+  (-) Krallık ele geçirildiğinde oyuncunun krallığının 2. ülkesi olur
+  (-) Ödül olarak tüm herolar tüm seviye 3 büyülerini öğrenirler
+28. Büyücü Çırağının İntikamı / Revenge of the Magician's Apprentice
+  (-) Büyücünün çırağı kaçmıştır ve söylentiler onun Yılan Dağı civarında görüldüğünü rapor etmektedir
+  (-) Yılan Dağı'na bir casus gönder (casus gittikten sonra çırağın yeri haritada açılır)
+  (-) Çırağın Yılan Dağı'ndaki yerine saldır ve onu yoket
+  (-) Ödül olarak tüm herolar seviye 4 büyülerini öğrenir
+29. Kötü Bir Rüya / A Bad Dream
+  (-) Sarayınızın büyücüsü rüyasında garip şeyler görmüş. Dediğine göre Yılan Dağı'nın arkasındaki madenlerde bir hazine gömülü olabilirmiş. Psişik güçler ona ulaşmış ve bu hazinenin içinde eski uygarlıklara ait gizemli bir kalıntı bulunabileceğini söylemişler.
+  (-) Madenleri incele (ilk parti yaratıklarla dövüştükten sonra büyücünüz duvarlardaki gizemli işaretlerin gerçekten de kadim bir uygarlığa ait olduğunu söyler ve devam etmenizi önerir)
+  (-) Seçenekler:
+    * Geri çekil (geri çekilirseniz bir dahaki sefere yine ilk parti yaratıklala dövüşmek zorunda kalırsınız)
+	* Devam et (devam ederseniz askerlerinizin %10u korkudan sizi terk edip kaçarlar)
+	(-) İkinci parti yaratıkları öldür (bu aşamada büyücü size kesinlikle çok gizemli bir item bulacağınızı faka onu bir canavarın konuyor olabileceğini söyler)
+	(-) Seçenekler:
+	  * Geri çekil (bir dahaki sefere ilk iki parti yaratıklarla yeniden dövüşmek zorunda kalırsınız ve yine ikinci partiye gelirken adamlarınızın %10u kaçar)
+	  * Devat et (devam ederseniz sadece herolarla gidebilirsiniz, diğer adamlarınız krallığınıza döner)
+	  (-) Bir ejderha ile tek başınıza dövüşerek tüm skillere +1 veren bir kolye bulursunuz
+	  (-) Burada ölürseniz kralınız dışındaki tüm herolarınızı kaybedersiniz!
+30. Uzak Ülkelerden Gelen Bir Prenses / A Princes Coming From Distant Lands
+  (-) Bir prenses bitkin vaziyette krallığınıza gelir. Babasının savaşta öldürüldüğünü fakat eski zamanlarda yaşamış antik bir büyücünün ölüleri diriltebilen bir Ankh'ten bahseden kitabını getirmiştir. Bu kitaba göre 3 farklı harabede 3 parçası bulunan bir Ankh vardır parçalar birleşince ortaya Ankh of Life çıkmaktadır. Prenses babasını dirilttikten sonra ödül olarak bu Ankh'ı size bırakmayı teklif eder
+  (-) Kabul ederseniz üç görev (Yaşam Ankı / Ankh of Life - Part I, II, III) açılır
+  (-) Üç görevi tamamladığınızda savaşta öldüğünüzde sizi bir kereye mahsus olarak diriltebilecek Ankh of Life itemı kazanırsınız
+31. Yaşam Ankı - Kısım I / The Ankh of Life - Part I
+  (-) Haritada Mısır Piramitleri'ne benzer bir yere gidilir. Buraya bu görev dışında gitmek mümkün olmaz
+  (-) Gizemli yaratıklarla dövüşülür ve Ank'ın ilk parçası alınır
+32. Yaşam Ankı - Kısım II / The Ankh of Life - Part II
+  (-) Piramitlerin yanında beliren ve bu görevden sonra kaybolacak 2. piramitlere girilir ve orada 2 tur yaratıklarla dövüşülür
+  (-) Ank'ın ikinci parçası alınır
+33. Yaşam Ankı - Kısım III / The Ankh of Life - Part III
+  (-) Piramitlerin yanında beliren ve bu görevden sonra kaybolacak 3. ve en büyük piramitlere girilir ve orada 3 tur yaratıklarla dövüşülür
+  (-) Ank'ın üçüncü parçası alınır
+  (-) Prenses babasını hayata döndürür ve Ankh of Life sizde kalır
+34. Yardım Eli / Helping Hand
+  (-) Bir komşu kral elçi göndererek kendisinin saldırıya uğremek üzere olduğunu, bir kampta son hazırlıklarını yapmakta olan düşman ordusunu yenersek çok aşırı büyük bir ücret ödeyeceğini taahhüt eder
+  (-) Seçeneklerimiz:
+    * Kabul (bu durumda görev 35 açılır)
+	* Red (bu durumda görev 36'ya bakın)
+35. Şüpheli Kamp / Suspicious Camp
+  (-) Kampa saldırırız fakat burada bir ordu değil birkaç haydut buluruz
+  (-) Yardım istiyor görünen kral bizi aldatarak evimizden uzaklaştırmış ve evimize saldırmıştır. Saldırıda kaynaklarımız yağmalanmış, askerlerimiz ölmüş, binalarımız zarar görmüştür ve görev 37 açılır
+36. (Sadece Görev 34'e Red görevi verilirse açılır) Madalyonun Diğer Yüzü / Other Side of the Medallion
+  (-) Yardım isteyen kralın mesajı şüphe çekmiştir, çünkü hiçbir casusumuz yakınlarda büyük bir orduyu rapor etmemiştir. Bunun üzerine gitmeye karar veririz
+  (-) Söylenen kampa casus gönder
+  (-) Casus gelince orada bir ordu olmadığını, bunun tek bir anlamı olabileceğini, onun da bizi krallığımızdan uzaklaştırıp ülkemizi yağmalamak olabileceğini söylerler. Görev 37 açılır
+37. İntikam / Revenge
+  (-) Bu yaptığının üzerine dost görünümlü düşman kralı yağlı kazığa oturtmak şart olmuştur.
+  (-) Sahtekâr kralın ülkesine saldır ve ülkeyi ele geçir
+  (-) Bunu yaptığımızda düşman kral bizden af diler ve affedersek bize çok büyük bir hazinenin yerini söyleyebileceğini söyler. Seçeneklerimiz:
+    * Kabul et (bu durumda görev 38 açılır)
+	* Reddet (bu durumda düşman kral bizi tehdit ederek beş farklı krallıktan yardımların yola çıktığını, eğer ona saldırırsak beş krallıktan gelecek yardımla bizi yokedeceğini söyler ve saldırıyı durdurmamızı ister). Seçeneklerimiz:
+	  * Kabul et (krallığımıza döneriz ve görev başarısız olur)
+	  * Reddet (bu durumda savaş başlar, hiçbir krallıktan da yardım falan gelmez)
+38. (Sadece Görev 37'de ilk soruya Kabul Et yanıtı verirsek açılır) Gizemli Hazine / Mysterious Treasure
+  (-) Düşman kralın gösterdiği yere saldırılır
+  (-) Buradan çıkan tek hazine birkaç tahta paradır
+  (-) Bu sırada yine bize saldırmış ve ülkemizi yağmalamıştır
+  (-) Görev 39 açılır
+39. (Sadece Görev 38 bitirilirse açılır) İkinci İntikam / Second Revenge
+  (-) Düşman krala saldırılır ve ülkesi yok edilerek tüm kaynakları yağmalanır
+40. Dostlar ve Düşmanlar / Friends and Enemies
+  (-) Bir klandan gelen mektubu okur ve o klana davet edildiğinizi öğrenirsiniz (bu sadece single'de görünen, gerçekte olmayan bir klan olacaktır)
+  (-) Klan davetini kabul et
+41. Cömertlik / Generosity
+  (-) Klan'dan gelen yeni bir mektupta klanı geliştirmek için bağış yapmamızın çok olumlu karşılanacağı yazılmaktadır
+  (-) Klan için 10.000 altın bağışla
+42. Daha Fazla Cömertlik / More Generosity
+  (-) Klan'dan gelen yeni bir mektupta düşman klanlardan gelecek saldırılara karşı tüm klan krallıklarını savunacak şekilde ortaklaşa bir duvar yapılacağı ve bunun için kaynak bağışlamanın çok olumlu karşılanacağı yazmaktadır
+  (-) Klan için 1000 odun bağışla
+  (-) Klan için 1000 buğday bağışla
+  (-) Klan için 1000 taş bağışla
+  (-) Klan için 5000 maden bağışla
+43. Klan Savunması / Defence of the Clan
+  (-) Klan'dan yeni bir mektup gelir ve krallıklardan birinin savunulması için acil bir şekilde bir ülkeye birlik gönderilmesi istenir
+  (-) 50 infantry eğit
+  (-) 20 archer eğit
+  (-) 10 priest eğit
+  (-) 10 sorceress eğit
+  (-) 3 mortar eğit
+  (-) Bu birlikleri falanca ülkeye yolla (savunmak için)
+44. Ateş Bize Sıçradı / Fire Spread to Us
+  (-) Klan savunması başarılı oldu, eğer biz olmasaydık bu görev başarılamayacaktı. Bunun üzerine çok sinirlenen rakip klan topluca bize dalmaya karar verdi. Bizim klanın tüm üyeleri de toplanıp bizim ülkemizi savunacaklar
+  (-) Saldırıyı önle
+45. Düşmanlarımızı Öldürmek İçin / For Killing Our Enemies
+  (-) Rakip klan bizim klana büyük zarar verdi. Fakat onlar da çok zarar gördü. Eğer kendilerini toparlayamadan baskın yaparsak onlardan sonsuza kadar kurtulabiliriz! Klan olarak çabucak toparlanıp karşı saldırıya geçiyoruz!
+  (-) 20 infantry eğit
+  (-) 10 archer eğit
+  (-) 5 priest eğit
+  (-) 5 sorceress eğit
+  (-) 1 mortar eğit
+  (-) Bu birlikleri falanca ülkeye yolla (saldırmak için)
+46. Klan'da Cinayet / Murder in the Clan
+  (-) Klan ülkelerinden birinin kralı gizemli bir şekilde ortadan kayboldu. Casuslar bu kralın bizim krallığımızdaki bir ucube anıt mezara götürüldüğünü rapor etti (bu bölge sadece bu görev sırasında haritada açık olacaktır)
+  (-) Görevimiz bu anıt mezarı kontrol etmektir. Fakat sadece herolarımız bu görevi kabul eder, askerlerimiz oraya gitmeyi kabul etmezler.
+  (-) Görev sırasında üç grupla dövüşülür. Son gruptan bir mektup çıkar ve "İşi bitirdiğinizden emin olun. Eduwu" yazmaktadır.
+  (-) Dönüşte bu durumu Eduwu'ya sorarız, o ise bunu kral Levander'in ayarladığını, suçu kendisine yıkmaya çalıştığını söyler. Levander ise "Neden işi bitirdiğinizden emin ol yazıp altına senin ismini yazayım?" diye sorarız
+  (-) Burada Klan iki düşman klana bölünür, bizden hangi krala inandığımızı söylememiz istenir. Hangi kralı seçersek onun klanında savaşırız.
+  (-) Eğer Eduwu'yu seçersek Levander'a "mektupta ne yazdığını size söylememiştim, suçlu sizsiniz deriz". Levander'ı seçersek Eduwu bize buna pişman olacağımızı söyler.
+47. Yıkım / Destruction
+  (-) Görevimiz 5 rakip krallığı yıkmaktır
+  (-) Eğer Görev 46'da Levander'i seçmişsek görev 48 açılır
+  (-) Eğer Görev 46'da Eduwu'yu seçmişsek görev 49 açılır
+48. Yanlış Bir Karar / A Wrong Decision
+  (-) Levander bir mektup yollayıp bize onun suçunu örttüğümüz için teşekkür eder ve bizimle dalga geçer. Biz de bu durumu kaldıramayarak Levander'a savaş açarız. Fakat Levander yanındaki diğer 4 krallığı da kışkırtarak bizi hepsiyle birden savaşmak zorunda bırakır
+  (-) Levander'ın yanında olan 5 krallığı yoket
+49. Doğru Bir Karar / A Right Decision
+  (-) Eduwu bize şahsen hayatını borçlu olduğu için teşekkür eder fakat bizim tek başımıza 5 krallığı yenmeye yetecek gücümüzün diğer krallıklar için bir tehdit olduğunu ve bu yüzden bize savaş açtıklarını söyler. Bu durumda bize yine esmer günler düşer
+  (-) Eduwu'nun yanında olan 5 krallığı yoket
+50. Sadece Güçlüler Hayatta Kalır / Only the Strongest Survives
+  (-) Haritadaki 10 krallığın tamamını ele geçir veya yoket
+
+* Savunma kulesi
+* Krallık merkezinden "Bina Dayanıklılığı" araştırması
+* Müzayede Evi
+* Savaşçılar (basic units) için Barracks'tan silah yükseltmesi
+* Savaşçılar (basic units) için Barracks'tan kalkan yükseltmesi
+* Büyücüler için Spire'dan büyü gücü arttırma yükseltmesi
+* Büyücüler için Spire'dan mana arttırma yükseltmesi
+* Workshop upgrade: improved efficiency, mechanical ünitelerde 1. seviyede %2, 2. seviyede %5 ve 3. seviyede %10 fazladan ateş güvü sağlar
+* Level 1 spells
+* Level 2 spells
+* Level 3 spells
+* Level 4 spells

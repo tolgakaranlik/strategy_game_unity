@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroManager : MonoBehaviour
 {
-    KHInventoryItem[] Inventory;
+    InventoryItem[] Inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +18,12 @@ public class HeroManager : MonoBehaviour
         
     }
 
-    public KHHero Generate(KHHero.HeroClass heroClass, KHHero.HeroSex sex)
+    public Hero Generate(Hero.HeroClass heroClass, Hero.HeroSex sex)
     {
         string[] namesMale = new string[] { "Landor", "Karakan", "Slingshot", "Lysandre", "Vinicius", "Junius", "Calussa", "Flaccus", "Horatius", "Donohuei", "Obstinante", "Ennisi", "Munghan", "Maoilios", "Yeroke" };
         string[] namesFemale = new string[] { "Starlight", "Windstorm", "Lotus", "Iridescence", "Iris", "Mystify", "Lilac", "Licorice", "Alexandrite", "Tanzanite", "Vertigo", "Venus", "Sisenna", "Mairenn", "Caoilinn" };
 
-        string generatedName = sex == KHHero.HeroSex.Female ? namesFemale[Random.Range(0, namesFemale.Length)] : namesMale[Random.Range(0, namesMale.Length)];
+        string generatedName = sex == Hero.HeroSex.Female ? namesFemale[Random.Range(0, namesFemale.Length)] : namesMale[Random.Range(0, namesMale.Length)];
 
         int hitPoints = 0;
         int strength = 0;
@@ -36,7 +36,7 @@ public class HeroManager : MonoBehaviour
 
         switch (heroClass)
         {
-            case KHHero.HeroClass.Archer:
+            case Hero.HeroClass.Archer:
                 hitPoints = Random.Range(28, 33);
                 strength = Random.Range(2, 4);
                 damageMin = 2;
@@ -44,7 +44,7 @@ public class HeroManager : MonoBehaviour
                 moveSpeed = 2;
                 attackSpeed = 2;
                 break;
-            case KHHero.HeroClass.Mage:
+            case Hero.HeroClass.Mage:
                 hitPoints = Random.Range(22, 27);
                 strength = Random.Range(1, 3);
                 damageMin = 1;
@@ -52,7 +52,7 @@ public class HeroManager : MonoBehaviour
                 moveSpeed = 1.25f;
                 attackSpeed = 1.5f;
                 break;
-            case KHHero.HeroClass.Paladin:
+            case Hero.HeroClass.Paladin:
                 hitPoints = Random.Range(33, 38);
                 strength = Random.Range(5, 8);
                 damageMin = 5;
@@ -60,7 +60,7 @@ public class HeroManager : MonoBehaviour
                 moveSpeed = 1.75f;
                 attackSpeed = 2.5f;
                 break;
-            case KHHero.HeroClass.Thief:
+            case Hero.HeroClass.Thief:
                 hitPoints = Random.Range(26, 32);
                 strength = Random.Range(3, 5);
                 damageMin = 2;
@@ -70,7 +70,7 @@ public class HeroManager : MonoBehaviour
                 break;
         }
 
-        KHHero hero = new KHHero(generatedName, "", hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed, heroClass, sex, 0, 1);
+        Hero hero = new Hero(generatedName, "", hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed, heroClass, sex, 0, 1);
 
         return hero;
     }

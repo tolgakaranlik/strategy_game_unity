@@ -1,0 +1,6 @@
+07-19 13:02:41 :: I :: Done loading WelcomeScreen
+07-19 13:02:41 :: I :: Done loading WelcomeScreen
+07-19 18:13:37 :: I :: Done loading WelcomeScreen
+07-19 18:13:37 :: I :: Done loading WelcomeScreen
+07-19 18:42:59 :: I :: Done loading WelcomeScreen
+07-19 18:42:59 :: I :: Done loading WelcomeScreen
