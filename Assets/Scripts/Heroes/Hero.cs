@@ -1,11 +1,14 @@
+using System;
+using System.Collections.Generic;
+
 public class Hero : Unit
 {
-	public enum HeroClass { Paladin, Mage, Archer, Thief };
+	public enum HeroClass { Paladin, Mage, Archer, Thief, Warrior };
 	public enum HeroSex { Male, Female };
 
-	private KHSpell[] spells;
+	private Spell[] spells;
 	private int experience;	
-	private int experienceToLevel;	
+	private int experienceToLevel = 1000;	
 	private int level;
 	private HeroClass heroClass;
 	private HeroSex sex;
@@ -59,7 +62,7 @@ public class Hero : Unit
 		}
 	}
 
-	public KHSpell[] Spells
+	public Spell[] Spells
 	{
 		get
 		{
@@ -93,20 +96,42 @@ public class Hero : Unit
 		}
     }
 
-	public Hero(string name, string avatarFile, int hitPoints, int strength, int damageMin, int damageMax, int armor, float luck, float moveSpeed, float attackSpeed, HeroClass heroClass, HeroSex sex) : base(name, avatarFile, hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed)
+	public Hero(string name, string avatarFile, int hitPoints, int strength, int damageMin, int damageMax, int armor, float luck, float moveSpeed, float attackSpeed, HeroClass heroClass, int experienceToLevel, HeroSex sex) : base(name, avatarFile, hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed)
 	{
+		this.experienceToLevel = experienceToLevel;
 		this.heroClass = heroClass;
 		this.sex = sex;
 		experience = 0;
 		level = 1;
+
+		AutoAddSpells();
 	}
-	
-	public Hero(string name, string avatarFile, int hitPoints, int strength, int damageMin, int damageMax, int armor, float luck, float moveSpeed, float attackSpeed, HeroClass heroClass, HeroSex sex, int experience, int level) : base(name, avatarFile, hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed)
+
+	public Hero(string name, string avatarFile, int hitPoints, int strength, int damageMin, int damageMax, int armor, float luck, float moveSpeed, float attackSpeed, HeroClass heroClass, int experienceToLevel, HeroSex sex, int experience, int level) : base(name, avatarFile, hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed)
 	{
+		this.experienceToLevel = experienceToLevel;
 		this.heroClass = heroClass;
 		this.experience = experience;
 		this.level = level;
 		this.sex = sex;
+
+		AutoAddSpells();
+	}
+
+	private void AutoAddSpells()
+	{
+		List<Spell> temporarySpells = new List<Spell>();
+		SpellManager spellManager = SpellManager.GetInstance();
+		switch (heroClass)
+		{
+			case HeroClass.Warrior:
+				temporarySpells.Add(spellManager.Find(1001));
+				temporarySpells.Add(spellManager.Find(1002));
+				break;
+		}
+
+
+		spells = temporarySpells.ToArray();
 	}
 
 	public void AddExperience(int amount)

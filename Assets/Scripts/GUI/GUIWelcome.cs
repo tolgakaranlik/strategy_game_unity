@@ -21,6 +21,7 @@ public class GUIWelcome : MonoBehaviour
     public Image WindowRegister2;
     public Image WindowRegisterBuildHero;
     public Image WindowLogin;
+    public Image WindowSpellDetail;
     public Image PlayButton;
     public GUIDialog Dialog;
 
@@ -50,11 +51,13 @@ public class GUIWelcome : MonoBehaviour
         WindowLogin.GetComponent<CanvasGroup>().alpha = 0;
         WindowRegister2.GetComponent<CanvasGroup>().alpha = 0;
         WindowRegisterBuildHero.GetComponent<CanvasGroup>().alpha = 0;
+        WindowSpellDetail.GetComponent<CanvasGroup>().alpha = 0;
 
         WindowRegister.gameObject.SetActive(false);
         WindowLogin.gameObject.SetActive(false);
         WindowRegister2.gameObject.SetActive(false);
         WindowRegisterBuildHero.gameObject.SetActive(false);
+        WindowSpellDetail.gameObject.SetActive(false);
     }
 
     public void DisplayRegisterWindow()
@@ -261,7 +264,51 @@ public class GUIWelcome : MonoBehaviour
         selectedClass = classIndex;
     }
 
-    //                 ClassSpellImages[i].GetComponent<CanvasGroup>().DOFade(1f, 0.3f).SetEase(Ease.Linear);
+    public void DisplaySpellDetails(int spellIndex)
+    {
+        StartCoroutine(DisplaySpellDetailsNow(spellIndex));
+    }
+
+    public void HideSpellDetails()
+    {
+        StartCoroutine(HideSpellDetailsNow());
+    }
+
+    IEnumerator HideSpellDetailsNow()
+    {
+        WindowSpellDetail.GetComponent<CanvasGroup>().DOFade(0f, 0.3f).SetEase(Ease.Linear);
+
+        yield return new WaitForSeconds(0.35f);
+
+        WindowSpellDetail.gameObject.SetActive(false);
+        WindowRegisterBuildHero.gameObject.SetActive(true);
+        WindowRegisterBuildHero.GetComponent<CanvasGroup>().DOFade(1f, 0.3f).SetEase(Ease.Linear);
+    }
+
+    IEnumerator DisplaySpellDetailsNow(int spellIndex)
+    {
+        WindowRegisterBuildHero.GetComponent<CanvasGroup>().DOFade(0f, 0.3f).SetEase(Ease.Linear);
+        WindowSpellDetail.GetComponent<CanvasGroup>().alpha = 0;
+        WindowSpellDetail.gameObject.SetActive(true);
+
+        Spell spell = SpellManager.GetInstance().Find(spellIndex);
+        if (spell != null)
+        {
+            WindowSpellDetail.transform.Find("ImgSpell").GetComponent<Image>().sprite = Resources.Load<Sprite>("SpellIcons/" + spell.AvatarFile);
+            WindowSpellDetail.transform.Find("TxtSpellName").GetComponent<Text>().text = spell.Name;
+            WindowSpellDetail.transform.Find("TxtSpellDescription").GetComponent<Text>().text = spell.Description;
+            WindowSpellDetail.transform.Find("TxtLevel1/TxtLevelDesc").GetComponent<Text>().text = spell.LevelDescriptions[0];
+            WindowSpellDetail.transform.Find("TxtLevel2/TxtLevelDesc").GetComponent<Text>().text = spell.LevelDescriptions[1];
+            WindowSpellDetail.transform.Find("TxtLevel3/TxtLevelDesc").GetComponent<Text>().text = spell.LevelDescriptions[2];
+            WindowSpellDetail.transform.Find("TxtLevel4/TxtLevelDesc").GetComponent<Text>().text = spell.LevelDescriptions[3];
+            WindowSpellDetail.transform.Find("TxtLevel5/TxtLevelDesc").GetComponent<Text>().text = spell.LevelDescriptions[4];
+        }
+
+        yield return new WaitForSeconds(0.35f);
+
+        WindowRegisterBuildHero.gameObject.SetActive(false);
+        WindowSpellDetail.GetComponent<CanvasGroup>().DOFade(1f, 0.3f).SetEase(Ease.Linear);
+    }
 
     IEnumerator ChangeClassSpells(int classIndex)
     {

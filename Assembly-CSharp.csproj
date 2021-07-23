@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,9 +53,6 @@
     <UnityVersion>2021.1.13f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Scripts\Spells\Spell.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIWelcome.cs" />
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
@@ -68,6 +65,9 @@
     <Compile Include="Assets\Scripts\Managers\HeroManager.cs" />
     <Compile Include="Assets\Scripts\Capabilities\Capability.cs" />
     <Compile Include="Assets\Scripts\InventoryItems\InventoryItem.cs" />
+    <Compile Include="Assets\Scripts\Spells\Bash.cs" />
+    <Compile Include="Assets\Scripts\Managers\SpellManager.cs" />
+    <Compile Include="Assets\Scripts\Spells\Bleed.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

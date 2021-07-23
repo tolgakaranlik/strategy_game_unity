@@ -33,6 +33,7 @@ public class HeroManager : MonoBehaviour
         int luck = 0;
         float moveSpeed = 1;
         float attackSpeed = 1;
+        int experienceToLevel = 1000;
 
         switch (heroClass)
         {
@@ -70,7 +71,7 @@ public class HeroManager : MonoBehaviour
                 break;
         }
 
-        Hero hero = new Hero(generatedName, "", hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed, heroClass, sex, 0, 1);
+        Hero hero = new Hero(generatedName, "", hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed, heroClass, experienceToLevel, sex, 0, 1);
 
         return hero;
     }

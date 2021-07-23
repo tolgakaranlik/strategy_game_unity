@@ -11,8 +11,9 @@ using UnityEngine.UI;
 ///  Modification History:
 ///  -----------------------------------------------------------
 ///
-/// This class intended responsible for displaying standard dialogs on the screen. From
-/// commands here, the GUIDialog prefab is being arranged to give the desired output
+/// This class responsible for displaying standard dialogs on the screen. From
+/// commands here, the GUIDialog prefab is being arranged to give the desired
+/// output
 /// 
 /// </summary>
 public class GUIDialog : MonoBehaviour
