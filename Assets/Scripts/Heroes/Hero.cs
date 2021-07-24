@@ -83,7 +83,6 @@ public class Hero : Unit
 		get
         {
 			return manaCapacity;
-
 		}
     }
 
@@ -92,8 +91,11 @@ public class Hero : Unit
 		get
         {
 			return remainingMana;
-
 		}
+		set
+        {
+			remainingMana = value;
+        }
     }
 
 	public Hero(string name, string avatarFile, int hitPoints, int strength, int damageMin, int damageMax, int armor, float luck, float moveSpeed, float attackSpeed, HeroClass heroClass, int experienceToLevel, HeroSex sex) : base(name, avatarFile, hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed)
@@ -125,12 +127,35 @@ public class Hero : Unit
 		switch (heroClass)
 		{
 			case HeroClass.Warrior:
+				manaCapacity = 35;
+
 				temporarySpells.Add(spellManager.Find(1001));
 				temporarySpells.Add(spellManager.Find(1002));
+				temporarySpells.Add(spellManager.Find(1003));
+				temporarySpells.Add(spellManager.Find(1004));
+				temporarySpells.Add(spellManager.Find(1005));
+				break;
+			case HeroClass.Mage:
+				manaCapacity = 90;
+
+				temporarySpells.Add(spellManager.Find(2001));
+				temporarySpells.Add(spellManager.Find(2002));
+				temporarySpells.Add(spellManager.Find(2003));
+				temporarySpells.Add(spellManager.Find(2004));
+				temporarySpells.Add(spellManager.Find(2005));
+				break;
+			case HeroClass.Archer:
+				manaCapacity = 40;
+
+				temporarySpells.Add(spellManager.Find(3001));
+				temporarySpells.Add(spellManager.Find(3002));
+				temporarySpells.Add(spellManager.Find(3003));
+				temporarySpells.Add(spellManager.Find(3004));
+				temporarySpells.Add(spellManager.Find(3005));
 				break;
 		}
 
-
+		remainingMana = manaCapacity;
 		spells = temporarySpells.ToArray();
 	}
 

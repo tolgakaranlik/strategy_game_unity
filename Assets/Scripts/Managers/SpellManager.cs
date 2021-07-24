@@ -37,6 +37,11 @@ public class SpellManager : MonoBehaviour
     {
         bool result = true;
 
+        for (int i = 0; i < Spells.Count; i++)
+        {
+            Spells[i].Init();
+        }
+    
         // Verify if two spells with the same id does not exist
         for (int i = 0; i < Spells.Count; i++)
         {

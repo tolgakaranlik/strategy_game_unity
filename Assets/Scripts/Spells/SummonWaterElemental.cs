@@ -12,7 +12,7 @@ using UnityEngine;
 /// This is the implementation of Bash spell from Warrior class
 /// 
 /// </summary>
-public class Bash : Spell
+public class SummonWaterElemental : Spell
 {
     public override void Cast()
     {

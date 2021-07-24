@@ -9,10 +9,10 @@ using UnityEngine;
 ///  Modification History:
 ///  -----------------------------------------------------------
 ///
-/// This is the implementation of Bash spell from Warrior class
+/// This is the implementation of WeakeningShot spell from Archer class
 /// 
 /// </summary>
-public class Bash : Spell
+public class WeakeningShot : Spell
 {
     public override void Cast()
     {

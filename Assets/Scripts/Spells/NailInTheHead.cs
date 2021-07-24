@@ -9,10 +9,10 @@ using UnityEngine;
 ///  Modification History:
 ///  -----------------------------------------------------------
 ///
-/// This is the implementation of Bash spell from Warrior class
+/// This is the implementation of NailInTheHead spell from Archer class
 /// 
 /// </summary>
-public class Bash : Spell
+public class NailInTheHead : Spell
 {
     public override void Cast()
     {

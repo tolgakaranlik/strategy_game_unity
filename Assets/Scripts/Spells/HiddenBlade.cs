@@ -9,10 +9,10 @@ using UnityEngine;
 ///  Modification History:
 ///  -----------------------------------------------------------
 ///
-/// This is the implementation of Bash spell from Warrior class
+/// This is the implementation of AimedShot spell from Thief class
 /// 
 /// </summary>
-public class Bash : Spell
+public class HiddenBlade : Spell
 {
     public override void Cast()
     {

@@ -230,9 +230,9 @@ public class GUIWelcome : MonoBehaviour
                 case 1:
                     StartCoroutine(ChangeClassDescription("Mages are tough enemies with strong capabilities casting various spells. A mage from high levels is always hard to fight against.", "Mage"));
                     break;
-                // Hunter
+                // Archer
                 case 2:
-                    StartCoroutine(ChangeClassDescription("Hunters are equiped with weapons and various equipment in order to gain advantage afainst more powerful enemies.", "Hunter"));
+                    StartCoroutine(ChangeClassDescription("Archers are equiped with ranged weapons. They have an advantage over stronger enemies because if you want to punish them, you should catch them first.", "Archer"));
                     break;
                 // Thief
                 case 3:

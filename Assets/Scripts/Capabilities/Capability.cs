@@ -184,4 +184,6 @@ public abstract class Capability : MonoBehaviour
     }
 	
 	public abstract void Cast();
+
+	public abstract void Init();
 }

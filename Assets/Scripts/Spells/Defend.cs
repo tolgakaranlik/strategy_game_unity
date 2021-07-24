@@ -9,10 +9,10 @@ using UnityEngine;
 ///  Modification History:
 ///  -----------------------------------------------------------
 ///
-/// This is the implementation of Bash spell from Warrior class
+/// This is the implementation of Defend spell from Paladin class
 /// 
 /// </summary>
-public class Bash : Spell
+public class Defend : Spell
 {
     public override void Cast()
     {
