@@ -16,12 +16,17 @@ using DG.Tweening;
 /// </summary>
 public class GUIWelcome : MonoBehaviour
 {
+    // TODO: Replace window switching commands with a unified Window Framework
     public Text TxtVersion;
     public Image WindowRegister;
     public Image WindowRegister2;
     public Image WindowRegisterBuildHero;
+    public Image WindowCustomizeHero;
     public Image WindowLogin;
     public Image WindowSpellDetail;
+    public Image WindowBuyHero;
+    public Image WindowLandDetail;
+    public Image WindowBuyLand;
     public Image PlayButton;
     public GUIDialog Dialog;
 
@@ -52,48 +57,99 @@ public class GUIWelcome : MonoBehaviour
         WindowRegister2.GetComponent<CanvasGroup>().alpha = 0;
         WindowRegisterBuildHero.GetComponent<CanvasGroup>().alpha = 0;
         WindowSpellDetail.GetComponent<CanvasGroup>().alpha = 0;
+        WindowCustomizeHero.GetComponent<CanvasGroup>().alpha = 0;
+        WindowBuyHero.GetComponent<CanvasGroup>().alpha = 0;
+        WindowLandDetail.GetComponent<CanvasGroup>().alpha = 0;
+        WindowBuyLand.GetComponent<CanvasGroup>().alpha = 0;
 
         WindowRegister.gameObject.SetActive(false);
         WindowLogin.gameObject.SetActive(false);
         WindowRegister2.gameObject.SetActive(false);
         WindowRegisterBuildHero.gameObject.SetActive(false);
         WindowSpellDetail.gameObject.SetActive(false);
+        WindowCustomizeHero.gameObject.SetActive(false);
+        WindowBuyHero.gameObject.SetActive(false);
+        WindowLandDetail.gameObject.SetActive(false);
+        WindowBuyLand.gameObject.SetActive(false);
     }
 
     public void DisplayRegisterWindow()
     {
-        WindowRegister.gameObject.SetActive(true);
+        PlayButton.DOFade(0, 0.2f);
 
-        WindowLogin.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
-        WindowRegister.GetComponent<CanvasGroup>().DOFade(1, 0.3f).SetEase(Ease.Linear);
-        PlayButton.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
-
-        StartCoroutine(DisableLoginWindow());
+        SwitchBetweenWindows(WindowLogin, WindowRegister, 0.2f);
     }
 
     public void DisplayLoginWindow()
     {
-        WindowLogin.gameObject.SetActive(true);
-
-        WindowRegister.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
-        WindowLogin.GetComponent<CanvasGroup>().DOFade(1, 0.3f).SetEase(Ease.Linear);
-
-        StartCoroutine(DisableRegisterWindow());
+        SwitchBetweenWindows(WindowRegister, WindowLogin, 0.2f);
     }
 
-    IEnumerator DisableRegisterWindow()
+    public void DisplayCustomizeHero()
+    {
+        SwitchBetweenWindows(WindowRegisterBuildHero, WindowCustomizeHero, 0.2f);
+    }
+
+    public void DisplayBuyHero()
+    {
+        WindowRegisterBuildHero.GetComponent<CanvasGroup>().DOFade(0, 0.2f);
+
+        SwitchBetweenWindows(WindowCustomizeHero, WindowBuyHero, 0.2f);
+    }
+
+    public void DisplayBuyLand()
+    {
+        SwitchBetweenWindows(WindowLandDetail, WindowBuyLand, 0.2f);
+    }
+
+    public void DisplaySelectLand()
+    {
+        WindowCustomizeHero.GetComponent<CanvasGroup>().DOFade(0, 0.2f);
+
+        StartCoroutine(HideCustomizeHero());
+        StartCoroutine(FindLand());
+    }
+
+    IEnumerator HideCustomizeHero()
     {
         yield return new WaitForSeconds(0.2f);
 
-        WindowRegister.gameObject.SetActive(false);
-        WindowRegister2.gameObject.SetActive(false);
+        WindowCustomizeHero.gameObject.SetActive(false);
     }
 
-    IEnumerator DisableLoginWindow()
+    IEnumerator FindLand()
     {
-        yield return new WaitForSeconds(0.2f);
+        Dialog.ProgressOn("Finding land for your kingdom...");
 
-        WindowLogin.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1.2f);
+
+        Dialog.ProgressOff();
+
+        // TEMPORRY - Replace below with a proper land finding algorithm
+        bool displayFirst = Random.Range(0, 2) == 0;
+
+        WindowLandDetail.gameObject.SetActive(true);
+        WindowLandDetail.transform.Find("ImgLand1").gameObject.SetActive(displayFirst);
+        WindowLandDetail.transform.Find("ImgLand2").gameObject.SetActive(!displayFirst);
+
+        string[] regionNames = new string[] { "Goodsprings", "Oredere", "Radiant", "Borg", "New Heaven" };
+        WindowLandDetail.transform.Find("TxtSpellInformation").GetComponent<Text>().text = regionNames[Random.Range(0, regionNames.Length)];
+
+        WindowLandDetail.transform.Find("TxtResource1/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource2/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource3/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource4/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource5/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource6/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
+
+        WindowLandDetail.GetComponent<CanvasGroup>().DOFade(1, 0.2f);
+    }
+
+    public void FindAnotherPlace()
+    {
+        WindowLandDetail.GetComponent<CanvasGroup>().DOFade(0, 0.2f);
+
+        StartCoroutine(FindLand());
     }
 
     public void LoginWithOAuth(string method)
@@ -149,7 +205,12 @@ public class GUIWelcome : MonoBehaviour
 
     public void BackFromRegister2()
     {
-        StartCoroutine(CloseRegister2());
+        SwitchBetweenWindows(WindowRegister2, WindowRegister, 0.2f);
+    }
+
+    public void BackFromCustomizeHero()
+    {
+        SwitchBetweenWindows(WindowCustomizeHero, WindowRegisterBuildHero, 0.2f);
     }
 
     public void LoginWithUserName()
@@ -211,7 +272,22 @@ public class GUIWelcome : MonoBehaviour
 
     public void BackFromBuildHero()
     {
-        StartCoroutine(GoBackFromBuildHero());
+        SwitchBetweenWindows(WindowRegisterBuildHero, WindowRegister2, 0.2f);
+    }
+
+    public void BackFromBuyHero()
+    {
+        SwitchBetweenWindows(WindowBuyHero, WindowRegisterBuildHero, 0.2f);
+    }
+
+    public void BackFromBuyLand()
+    {
+        SwitchBetweenWindows(WindowBuyLand, WindowLandDetail, 0.2f);
+    }
+
+    public void BackFromSelectLand()
+    {
+        SwitchBetweenWindows(WindowLandDetail, WindowCustomizeHero, 0.2f);
     }
 
     public void SwitchToClass(int classIndex)
@@ -271,18 +347,7 @@ public class GUIWelcome : MonoBehaviour
 
     public void HideSpellDetails()
     {
-        StartCoroutine(HideSpellDetailsNow());
-    }
-
-    IEnumerator HideSpellDetailsNow()
-    {
-        WindowSpellDetail.GetComponent<CanvasGroup>().DOFade(0f, 0.3f).SetEase(Ease.Linear);
-
-        yield return new WaitForSeconds(0.35f);
-
-        WindowSpellDetail.gameObject.SetActive(false);
-        WindowRegisterBuildHero.gameObject.SetActive(true);
-        WindowRegisterBuildHero.GetComponent<CanvasGroup>().DOFade(1f, 0.3f).SetEase(Ease.Linear);
+        SwitchBetweenWindows(WindowSpellDetail, WindowRegisterBuildHero, 0.2f);
     }
 
     IEnumerator DisplaySpellDetailsNow(int spellIndex)
@@ -342,18 +407,6 @@ public class GUIWelcome : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
     }
 
-    IEnumerator GoBackFromBuildHero()
-    {
-        WindowRegisterBuildHero.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
-
-        yield return new WaitForSeconds(0.3f);
-
-        WindowRegisterBuildHero.gameObject.SetActive(false);
-
-        WindowRegister2.gameObject.SetActive(true);
-        WindowRegister2.GetComponent<CanvasGroup>().DOFade(1, 0.2f).SetEase(Ease.Linear);
-    }
-
     IEnumerator DisplayOAuthError()
     {
         yield return new WaitForSeconds(2f);
@@ -399,16 +452,6 @@ public class GUIWelcome : MonoBehaviour
         WindowRegister2.GetComponent<CanvasGroup>().DOFade(1, 0.3f).SetEase(Ease.Linear);
     }
 
-    IEnumerator CloseRegister2()
-    {
-        WindowRegister2.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
-
-        yield return new WaitForSeconds(0.5f);
-
-        WindowRegister2.gameObject.SetActive(false);
-        WindowRegister.GetComponent<CanvasGroup>().DOFade(1, 0.3f).SetEase(Ease.Linear);
-    }
-
     IEnumerator DisplayRegister2Error(string message)
     {
         WindowRegister2.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
@@ -419,5 +462,24 @@ public class GUIWelcome : MonoBehaviour
         Dialog.Error(message, "Close", () => {
             StartCoroutine(DisplayRegisterStep2(0));
         });
+    }
+
+    // Window framework
+    public void SwitchBetweenWindows(Image sourceWindow, Image targetWindow, float transitionTime)
+    {
+        StartCoroutine(SwitchBetweenWindowsNow(sourceWindow, targetWindow, transitionTime));
+    }
+
+    IEnumerator SwitchBetweenWindowsNow(Image sourceWindow, Image targetWindow, float transitionTime)
+    {
+        sourceWindow.GetComponent<CanvasGroup>().DOFade(0, 0.2f).SetEase(Ease.Linear);
+
+        yield return new WaitForSeconds(0.5f);
+
+        sourceWindow.gameObject.SetActive(false);
+        targetWindow.gameObject.SetActive(true);
+
+        targetWindow.GetComponent<CanvasGroup>().alpha = 0;
+        targetWindow.GetComponent<CanvasGroup>().DOFade(1, 0.3f).SetEase(Ease.Linear);
     }
 }
