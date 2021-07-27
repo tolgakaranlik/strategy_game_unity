@@ -53,6 +53,14 @@ public class HeroManager : MonoBehaviour
                 moveSpeed = 1.25f;
                 attackSpeed = 1.5f;
                 break;
+            case Hero.HeroClass.Warrior:
+                hitPoints = Random.Range(37, 41);
+                strength = Random.Range(6, 9);
+                damageMin = 6;
+                damageMax = 10;
+                moveSpeed = 1.85f;
+                attackSpeed = 2.25f;
+                break;
             case Hero.HeroClass.Paladin:
                 hitPoints = Random.Range(33, 38);
                 strength = Random.Range(5, 8);

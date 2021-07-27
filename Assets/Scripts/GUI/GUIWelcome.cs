@@ -290,6 +290,11 @@ public class GUIWelcome : MonoBehaviour
         SwitchBetweenWindows(WindowLandDetail, WindowCustomizeHero, 0.2f);
     }
 
+    public void SaveAndProceedToWorldMap()
+    {
+        StartCoroutine(ProceedToWorldMapCoroutine());
+    }
+
     public void SwitchToClass(int classIndex)
     {
         if(selectedClass != classIndex)
@@ -348,6 +353,17 @@ public class GUIWelcome : MonoBehaviour
     public void HideSpellDetails()
     {
         SwitchBetweenWindows(WindowSpellDetail, WindowRegisterBuildHero, 0.2f);
+    }
+
+    IEnumerator ProceedToWorldMapCoroutine()
+    {
+        WindowLandDetail.GetComponent<CanvasGroup>().DOFade(0, 0.5f);
+
+        yield return new WaitForSeconds(0.5f);
+
+        Dialog.ProgressOn("Creating your account...");
+
+        yield return new WaitForSeconds(2.0f);
     }
 
     IEnumerator DisplaySpellDetailsNow(int spellIndex)

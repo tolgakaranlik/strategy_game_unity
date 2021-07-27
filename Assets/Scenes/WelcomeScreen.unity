@@ -10454,6 +10454,7 @@ GameObject:
   - component: {fileID: 710345787}
   - component: {fileID: 710345786}
   - component: {fileID: 710345788}
+  - component: {fileID: 710345789}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -10525,6 +10526,20 @@ MonoBehaviour:
   - {fileID: 1051793041}
   - {fileID: 1419849019}
   - {fileID: 1013153550}
+--- !u!114 &710345789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710345785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae41db34b1195f4f8b9c9d028dad9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Quests:
+  - {fileID: 11400000, guid: 966e1ca748c214e43a931d1ccac4f808, type: 2}
 --- !u!1 &711085651
 GameObject:
   m_ObjectHideFlags: 0
@@ -16082,7 +16097,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 971833186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 724710040}
+        m_TargetAssemblyTypeName: GUIWelcome, Assembly-CSharp
+        m_MethodName: SaveAndProceedToWorldMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &971833186
 MonoBehaviour:
   m_ObjectHideFlags: 0

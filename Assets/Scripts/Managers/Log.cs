@@ -22,7 +22,7 @@ public static class Log
 {
     static int maxSizeKB = 64;
     static int maxFiles = 3;
-    static string uploadUrl = "http://";
+    //static string uploadUrl = "http://";
 
     public static void Info(string message)
     {
