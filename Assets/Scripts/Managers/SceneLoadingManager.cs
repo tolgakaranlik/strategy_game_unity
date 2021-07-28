@@ -16,11 +16,13 @@ using UnityEngine;
 ///
 /// </summary>
 
-public class SceneLoadingManager : MonoBehaviour
+public static class KNHSceneManager
 {
+    private static string loadingTarget = "WelcomeScreen";
+
     public delegate void OnProgressChanged(float percent);
 
-    OnProgressChanged progressChanger = null;
+    static OnProgressChanged progressChanger = null;
 
     /// <summary>
     /// Loads the scene (scene name should be given from levelName argument). If an
@@ -29,22 +31,31 @@ public class SceneLoadingManager : MonoBehaviour
     /// </summary>
     /// <param name="levelName"></param>
     /// <param name="progress"></param>
-    public void LoadScene(string levelName, OnProgressChanged progress)
+    public static void LoadScene(string levelName, OnProgressChanged progress)
     {
         // TODO: caching on scene load
 
         progressChanger = progress;
-        StartCoroutine(BeginLoadScene(levelName));
+        loadingTarget = levelName;
+        BeginLoadScene();
     }
 
-    IEnumerator BeginLoadScene(string levelName)
+    public static void LoadScene(OnProgressChanged progress)
     {
-        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(levelName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        // TODO: caching on scene load
+
+        progressChanger = progress;
+        BeginLoadScene();
+    }
+
+    static void BeginLoadScene()
+    {
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(loadingTarget, UnityEngine.SceneManagement.LoadSceneMode.Single);
 
         float oldProgress = 0;
         asyncLoad.allowSceneActivation = true;
 
-        while (!asyncLoad.isDone)
+        while (!asyncLoad.isDone && asyncLoad.progress < 0.9f)
         {
             if(oldProgress != asyncLoad.progress)
             {
@@ -53,7 +64,6 @@ public class SceneLoadingManager : MonoBehaviour
             }
 
             progressChanger?.Invoke(1);
-            yield return null;
         }
     }
 }

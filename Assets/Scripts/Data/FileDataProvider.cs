@@ -10,7 +10,16 @@ public class FileDataProvider : DataProvider
 {
     protected string fileName;
     protected bool sourceOpen = false;
+
     public bool Open(string source)
+    {
+        sourceOpen = true;
+        fileName = Application.persistentDataPath + "/" + source;
+        return true;
+    }
+
+    // This function should not be used in mobile platforms
+    public bool OpenPath(string source)
     {
         sourceOpen = true;
         fileName = source;

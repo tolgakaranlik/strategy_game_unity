@@ -30,8 +30,8 @@ public static class Encryption
             }
         }
 
-        Debug.Log("Set encryption key: " + encryptionKey);
-        Debug.Log("Set chiper text: " + clearText);
+        //Debug.Log("Set encryption key: " + encryptionKey);
+        //Debug.Log("Set chiper text: " + clearText);
 
         return Convert.ToChar((char)encryptionKey.Length + 65) + encryptionKey + clearText;
     }
@@ -41,8 +41,8 @@ public static class Encryption
         string encryptionKey = cipherText.Substring(1, bytes[0] - 65);
         cipherText = cipherText.Substring(bytes[0] - 64);
 
-        Debug.Log("Detected encryption key: " + encryptionKey);
-        Debug.Log("Detected chiper text: " + cipherText);
+        //Debug.Log("Detected encryption key: " + encryptionKey);
+        //Debug.Log("Detected chiper text: " + cipherText);
 
         cipherText = cipherText.Replace(" ", "+");
         byte[] cipherBytes = Convert.FromBase64String(cipherText);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 /// <summary>
 ///
@@ -43,9 +44,13 @@ public class GUIWelcome : MonoBehaviour
     public const int SEX_MALE = 0;
     public const int SEX_FEMALE = 1;
 
+    // account type (0:mail, 101-199: one of oauth types)
+    int accountType = 0;
     int selectedClass = 0;
     int sex = SEX_MALE;
     string governorName;
+    string emailAddress = "";
+    string townName = "";
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +76,37 @@ public class GUIWelcome : MonoBehaviour
         WindowBuyHero.gameObject.SetActive(false);
         WindowLandDetail.gameObject.SetActive(false);
         WindowBuyLand.gameObject.SetActive(false);
+
+        TestForLogin();
+    }
+
+    private void TestForLogin()
+    {
+        try
+        {
+            Log.Info("Checking for previous session data...");
+
+            EncryptedFileDataProvider loginData = new EncryptedFileDataProvider();
+            loginData.Open("knh.dat");
+
+            DataContainer data = loginData.Deserialize();
+
+            if(data.Get("user_name") != null || data.Get("session_token") != null)
+            {
+                Dialog.ProgressOn("Magic in progress...");
+                VerifySessionData(data.Get("user_name"), data.Get("session_token"));
+            }
+        }
+        catch
+        {
+            Log.Info("No previous login data found");
+            GetComponent<Animator>().enabled = true;
+        }
+    }
+
+    private void VerifySessionData(object v1, object v2)
+    {
+        StartCoroutine(TemporaryVerifySessionData());
     }
 
     public void DisplayRegisterWindow()
@@ -126,21 +162,22 @@ public class GUIWelcome : MonoBehaviour
         Dialog.ProgressOff();
 
         // TEMPORRY - Replace below with a proper land finding algorithm
-        bool displayFirst = Random.Range(0, 2) == 0;
+        bool displayFirst = UnityEngine.Random.Range(0, 2) == 0;
 
         WindowLandDetail.gameObject.SetActive(true);
         WindowLandDetail.transform.Find("ImgLand1").gameObject.SetActive(displayFirst);
         WindowLandDetail.transform.Find("ImgLand2").gameObject.SetActive(!displayFirst);
 
         string[] regionNames = new string[] { "Goodsprings", "Oredere", "Radiant", "Borg", "New Heaven" };
-        WindowLandDetail.transform.Find("TxtSpellInformation").GetComponent<Text>().text = regionNames[Random.Range(0, regionNames.Length)];
+        townName = regionNames[UnityEngine.Random.Range(0, regionNames.Length)];
+        WindowLandDetail.transform.Find("TxtSpellInformation").GetComponent<Text>().text = townName;
 
-        WindowLandDetail.transform.Find("TxtResource1/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
-        WindowLandDetail.transform.Find("TxtResource2/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
-        WindowLandDetail.transform.Find("TxtResource3/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
-        WindowLandDetail.transform.Find("TxtResource4/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
-        WindowLandDetail.transform.Find("TxtResource5/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
-        WindowLandDetail.transform.Find("TxtResource6/PrgStat").GetComponent<Slider>().value = Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource1/PrgStat").GetComponent<Slider>().value = UnityEngine.Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource2/PrgStat").GetComponent<Slider>().value = UnityEngine.Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource3/PrgStat").GetComponent<Slider>().value = UnityEngine.Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource4/PrgStat").GetComponent<Slider>().value = UnityEngine.Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource5/PrgStat").GetComponent<Slider>().value = UnityEngine.Random.Range(0.1f, 0.22f);
+        WindowLandDetail.transform.Find("TxtResource6/PrgStat").GetComponent<Slider>().value = UnityEngine.Random.Range(0.1f, 0.22f);
 
         WindowLandDetail.GetComponent<CanvasGroup>().DOFade(1, 0.2f);
     }
@@ -236,7 +273,7 @@ public class GUIWelcome : MonoBehaviour
 
     public void RegisterAccount()
     {
-        string emailAddress = WindowRegister2.transform.Find("InpMailAddress").GetComponent<InputField>().text.Trim();
+        emailAddress = WindowRegister2.transform.Find("InpMailAddress").GetComponent<InputField>().text.Trim();
         string password = WindowRegister2.transform.Find("InpPassword").GetComponent<InputField>().text.Trim();
         string passwordRetype = WindowRegister2.transform.Find("InpPasswordRetype").GetComponent<InputField>().text.Trim();
 
@@ -364,6 +401,59 @@ public class GUIWelcome : MonoBehaviour
         Dialog.ProgressOn("Creating your account...");
 
         yield return new WaitForSeconds(2.0f);
+
+        DataContainer dcUser = new DataContainer();
+        DataContainer dcQuests = new DataContainer();
+        DataContainer dcKingdom = new DataContainer();
+        DataContainer dcTown = new DataContainer();
+
+        List<DataValue> activeQuests = new List<DataValue>();
+        activeQuests.Add(new DataValue(1));
+
+        List<DataValue> activeTowns = new List<DataValue>();
+        activeTowns.Add(new DataValue(dcTown));
+
+        dcTown.Add("town_id", 1);
+        dcTown.Add("town_name", townName);
+        dcTown.Add("coord_x", 0);
+        dcTown.Add("coord_y", 0);
+
+        dcQuests.Add("active_quests", activeQuests);
+        dcKingdom.Add("towns", activeTowns);
+
+        dcUser.Add("account_type", accountType);
+        dcUser.Add("user_name", emailAddress);
+        dcUser.Add("session_token", "-");
+        dcUser.Add("full_name", governorName);
+        dcUser.Add("hero_class", selectedClass);
+        dcUser.Add("center_town", 1);
+        dcUser.Add("sex", sex);
+        dcUser.Add("appearance_suit_color", 0);
+        dcUser.Add("appearance_hair_style", 0);
+        dcUser.Add("appearance_hair_color", 0);
+        dcUser.Add("appearance_skin_color", 0);
+        dcUser.Add("quest_data", dcQuests);
+        dcUser.Add("kingdom_data", dcKingdom);
+
+        EncryptedFileDataProvider userFile = new EncryptedFileDataProvider();
+
+        try
+        {
+            userFile.Open("knh.dat");
+            userFile.Serialize(dcUser);
+
+            LoadWorldMap();
+        } catch(Exception ex)
+        {
+            Dialog.Error("Something went wrong while saving your user information. Are you sure you are not out of disk space?", "Back", () =>
+            {
+                WindowLogin.gameObject.SetActive(true);
+                WindowLogin.GetComponent<CanvasGroup>().alpha = 0;
+                WindowLogin.GetComponent<CanvasGroup>().DOFade(1, 0.3f);
+            });
+
+            Log.Error("Could not save knh.dat, details: " + ex.Message + "\n" + ex.StackTrace);
+        }
     }
 
     IEnumerator DisplaySpellDetailsNow(int spellIndex)
@@ -480,6 +570,20 @@ public class GUIWelcome : MonoBehaviour
         });
     }
 
+    void LoadWorldMap()
+    {
+        KNHSceneManager.LoadScene("WorldMap", OnLevelLoadProgressChanged);
+    }
+
+    void OnLevelLoadProgressChanged(float percent)
+    {
+        if (percent >= 0.9f)
+        {
+            // Done loading
+            Log.Info("Done loading WorldMap");
+        }
+    }
+
     // Window framework
     public void SwitchBetweenWindows(Image sourceWindow, Image targetWindow, float transitionTime)
     {
@@ -497,5 +601,14 @@ public class GUIWelcome : MonoBehaviour
 
         targetWindow.GetComponent<CanvasGroup>().alpha = 0;
         targetWindow.GetComponent<CanvasGroup>().DOFade(1, 0.3f).SetEase(Ease.Linear);
+    }
+
+    // Temporary functions, which will be replaced in real game
+    IEnumerator TemporaryVerifySessionData()
+    {
+        yield return new WaitForSeconds(2f);
+
+        Dialog.ProgressOff();
+        LoadWorldMap();
     }
 }

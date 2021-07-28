@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,13 +53,18 @@
     <UnityVersion>2021.1.13f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
+    <Compile Include="Assets\Scripts\Data\DataProvider.cs" />
     <Compile Include="Assets\Scripts\Spells\NailInTheHead.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXLightFade.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
     <Compile Include="Assets\Scripts\Spells\Bleed.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
+    <Compile Include="Assets\Scripts\Test Scripts\DataTest.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
     <Compile Include="Assets\Scripts\Spells\FrostArmor.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
@@ -68,10 +73,12 @@
     <Compile Include="Assets\Scripts\Spells\Bless.cs" />
     <Compile Include="Assets\Scripts\Spells\HiddenBlade.cs" />
     <Compile Include="Assets\Scripts\Spells\ChargedShot.cs" />
+    <Compile Include="Assets\Scripts\Data\Encryption.cs" />
     <Compile Include="Assets\Scripts\Spells\BangShot.cs" />
     <Compile Include="Assets\Scripts\Spells\AuraOfPower.cs" />
     <Compile Include="Assets\Scripts\Spells\Spell.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIWelcome.cs" />
+    <Compile Include="Assets\Scripts\Data\DataContainer.cs" />
     <Compile Include="Assets\Scripts\Spells\ChargedStrike.cs" />
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
     <Compile Include="Assets\Scripts\Managers\VersionManager.cs" />
@@ -83,6 +90,7 @@
     <Compile Include="Assets\Scripts\Spells\SecretIngredient.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
     <Compile Include="Assets\Scripts\Spells\WeakeningShot.cs" />
+    <Compile Include="Assets\Scripts\Data\EncryptedFileDataProvider.cs" />
     <Compile Include="Assets\Scripts\Spells\AuraOfMagic.cs" />
     <Compile Include="Assets\Scripts\Managers\Log.cs" />
     <Compile Include="Assets\Scripts\Spells\SkullCrack.cs" />
@@ -93,26 +101,21 @@
     <Compile Include="Assets\Scripts\Spells\LightningBolt.cs" />
     <Compile Include="Assets\Scripts\Spells\SpikeStripe.cs" />
     <Compile Include="Assets\Scripts\Spells\Roar.cs" />
+    <Compile Include="Assets\Quest.cs" />
     <Compile Include="Assets\Scripts\GUI\GUILoader.cs" />
     <Compile Include="Assets\Scripts\GUI\GUIDialog.cs" />
     <Compile Include="Assets\Scripts\Spells\RainOfArrows.cs" />
+    <Compile Include="Assets\Scripts\Managers\QuestManager.cs" />
     <Compile Include="Assets\Scripts\Spells\Defend.cs" />
     <Compile Include="Assets\Scripts\Spells\SummonWaterElemental.cs" />
     <Compile Include="Assets\Scripts\Heroes\Hero.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Managers\HeroManager.cs" />
+    <Compile Include="Assets\Scripts\Data\FileDataProvider.cs" />
     <Compile Include="Assets\Scripts\Capabilities\Capability.cs" />
     <Compile Include="Assets\Scripts\Temporary\TemporaryBattlefield.cs" />
     <Compile Include="Assets\Scripts\InventoryItems\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Spells\Bash.cs" />
-    <Compile Include="Assets\Scripts\Data\DataProvider.cs" />
-    <Compile Include="Assets\Scripts\Data\DataContainer.cs" />
-    <Compile Include="Assets\Scripts\Test Scripts\DataTest.cs" />
-    <Compile Include="Assets\Scripts\Data\FileDataProvider.cs" />
-    <Compile Include="Assets\Scripts\Data\EncryptedFileDataProvider.cs" />
-    <Compile Include="Assets\Scripts\Data\Encryption.cs" />
-    <Compile Include="Assets\Quest.cs" />
-    <Compile Include="Assets\Scripts\Managers\QuestManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />

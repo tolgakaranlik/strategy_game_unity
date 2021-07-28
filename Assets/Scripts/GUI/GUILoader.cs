@@ -18,7 +18,6 @@ using UnityEngine.UI;
 public class GUILoader : MonoBehaviour
 {
     public Slider PrgLoading;
-    public SceneLoadingManager Loader;
 
     void Start()
     {
@@ -30,7 +29,7 @@ public class GUILoader : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        Loader.LoadScene("WelcomeScreen", OnLevelLoadProgressChanged);
+        KNHSceneManager.LoadScene("WelcomeScreen", OnLevelLoadProgressChanged);
     }
 
     void OnLevelLoadProgressChanged(float percent)

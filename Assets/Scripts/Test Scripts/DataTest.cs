@@ -67,7 +67,7 @@ public class DataTest : MonoBehaviour
     {
         FileDataProvider fdp = new FileDataProvider();
 
-        fdp.Open("c:\\temp\\test.txt");
+        fdp.OpenPath("c:\\temp\\test.txt");
         fdp.Serialize(container5);
 
         Debug.Log("Saved to file");
@@ -77,7 +77,7 @@ public class DataTest : MonoBehaviour
     {
         FileDataProvider fdp = new FileDataProvider();
 
-        fdp.Open("c:\\temp\\test.txt");
+        fdp.OpenPath("c:\\temp\\test.txt");
         DataContainer dc = fdp.Deserialize();
 
         Input.text = dc.ToString();
@@ -87,7 +87,7 @@ public class DataTest : MonoBehaviour
     {
         EncryptedFileDataProvider fdp = new EncryptedFileDataProvider();
 
-        fdp.Open("c:\\temp\\test_encrypted.txt");
+        fdp.OpenPath("c:\\temp\\test_encrypted.txt");
         fdp.Serialize(container5);
 
         Debug.Log("Saved to file");
@@ -97,7 +97,7 @@ public class DataTest : MonoBehaviour
     {
         EncryptedFileDataProvider fdp = new EncryptedFileDataProvider();
 
-        fdp.Open("c:\\temp\\test_encrypted.txt");
+        fdp.OpenPath("c:\\temp\\test_encrypted.txt");
         DataContainer dc = fdp.Deserialize();
 
         Input.text = dc.ToString();

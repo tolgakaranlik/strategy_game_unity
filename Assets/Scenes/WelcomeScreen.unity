@@ -10452,7 +10452,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 710345787}
-  - component: {fileID: 710345786}
   - component: {fileID: 710345788}
   - component: {fileID: 710345789}
   m_Layer: 0
@@ -10462,18 +10461,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &710345786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710345785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7c8e857934ae634488da2e7ea5aebfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &710345787
 Transform:
   m_ObjectHideFlags: 0
@@ -11275,7 +11262,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724710034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7a2b142da65208941a8c8a7160bf4f02, type: 2}
   m_CullingMode: 0
@@ -12317,7 +12304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &757097058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15318,7 +15305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &933800019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20910,7 +20897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1204546442
 RectTransform:
   m_ObjectHideFlags: 0
