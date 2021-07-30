@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TriForge Assets/Top Down - Fantasy Forest - URP/Scenes/DemoScene_v2.unity
+    guid: 5d9767bbf9ae0a24fafb06e0a555eb41
+  - enabled: 1
     path: Assets/Scenes/Loader.unity
     guid: 17b137837c8436a4dbf2780ed9b5e60e
   - enabled: 1
