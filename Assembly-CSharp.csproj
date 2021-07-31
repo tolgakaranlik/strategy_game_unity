@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Spells\AuraOfMagic.cs" />
     <Compile Include="Assets\Scripts\Managers\Log.cs" />
     <Compile Include="Assets\Scripts\Spells\SkullCrack.cs" />
+    <Compile Include="Assets\Scripts\Managers\CameraMovementManager.cs" />
     <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
     <Compile Include="Assets\Scripts\Managers\SpellManager.cs" />
     <Compile Include="Assets\Scripts\Spells\AimedShot.cs" />
@@ -114,15 +115,32 @@
     <Compile Include="Assets\Scripts\Temporary\TemporaryBattlefield.cs" />
     <Compile Include="Assets\Scripts\InventoryItems\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Spells\Bash.cs" />
-    <Compile Include="Assets\Scripts\Managers\CameraMovementManager.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\NationPickController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\HighlightToggle.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\AnimatedWindowController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderValueController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\Transform\TransformInRect.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\ExitButtonController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\ScrollController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\ResourceBarController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Domain\Nation.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\WindowController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderPercentController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\BinarySliderController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\PopupWindowController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderStepController.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Domain\NationProperties.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\EventTriggerInvoker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
+    <None Include="Assets\MedievalKingdomUI\Shaders\Fluid.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\cutout bumped specular colormasked.shader" />
     <None Include="Assets\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\TriForge Assets\Top Down - Fantasy Forest - URP\Shaders\Water.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\animated_grass_shader2.shader" />
+    <None Include="Assets\MedievalKingdomUI\Shaders\Blur.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\Bumped Specular colormasked.shader" />
     <None Include="Assets\TriForge Assets\Top Down - Fantasy Forest - URP\Shaders\TreeLod.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\animated_flags_shader.shader" />
