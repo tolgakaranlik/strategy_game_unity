@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,103 +53,557 @@
     <UnityVersion>2021.1.13f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
-    <Compile Include="Assets\Scripts\Data\DataProvider.cs" />
-    <Compile Include="Assets\Scripts\Spells\NailInTheHead.cs" />
-    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXLightFade.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
-    <Compile Include="Assets\Scripts\Spells\Bleed.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
-    <Compile Include="Assets\Scripts\Test Scripts\DataTest.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
-    <Compile Include="Assets\Scripts\Spells\FrostArmor.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
-    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
-    <Compile Include="Assets\Scripts\Spells\BrutalStrike.cs" />
-    <Compile Include="Assets\Scripts\Spells\Bless.cs" />
-    <Compile Include="Assets\Scripts\Spells\HiddenBlade.cs" />
-    <Compile Include="Assets\Scripts\Spells\ChargedShot.cs" />
-    <Compile Include="Assets\Scripts\Data\Encryption.cs" />
-    <Compile Include="Assets\Scripts\Spells\BangShot.cs" />
-    <Compile Include="Assets\Scripts\Spells\AuraOfPower.cs" />
-    <Compile Include="Assets\Scripts\Spells\Spell.cs" />
-    <Compile Include="Assets\Scripts\GUI\GUIWelcome.cs" />
-    <Compile Include="Assets\Scripts\Data\DataContainer.cs" />
-    <Compile Include="Assets\Scripts\Spells\ChargedStrike.cs" />
-    <Compile Include="Assets\Scripts\Units\Unit.cs" />
-    <Compile Include="Assets\Scripts\Managers\VersionManager.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\SceneLoadingManager.cs" />
-    <Compile Include="Assets\Scripts\Spells\Heal.cs" />
-    <Compile Include="Assets\Scripts\Spells\Disguise.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
-    <Compile Include="Assets\Scripts\Spells\SecretIngredient.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
-    <Compile Include="Assets\Scripts\Spells\WeakeningShot.cs" />
-    <Compile Include="Assets\Scripts\Data\EncryptedFileDataProvider.cs" />
-    <Compile Include="Assets\Scripts\Spells\AuraOfMagic.cs" />
-    <Compile Include="Assets\Scripts\Managers\Log.cs" />
-    <Compile Include="Assets\Scripts\Spells\SkullCrack.cs" />
-    <Compile Include="Assets\Scripts\Managers\CameraMovementManager.cs" />
-    <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
-    <Compile Include="Assets\Scripts\Managers\SpellManager.cs" />
-    <Compile Include="Assets\Scripts\Spells\AimedShot.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
-    <Compile Include="Assets\Scripts\Spells\LightningBolt.cs" />
-    <Compile Include="Assets\Scripts\Spells\SpikeStripe.cs" />
-    <Compile Include="Assets\Scripts\Spells\Roar.cs" />
-    <Compile Include="Assets\Quest.cs" />
-    <Compile Include="Assets\Scripts\GUI\GUILoader.cs" />
-    <Compile Include="Assets\Scripts\GUI\GUIDialog.cs" />
-    <Compile Include="Assets\Scripts\Spells\RainOfArrows.cs" />
-    <Compile Include="Assets\Scripts\Managers\QuestManager.cs" />
-    <Compile Include="Assets\Scripts\Spells\Defend.cs" />
-    <Compile Include="Assets\Scripts\Spells\SummonWaterElemental.cs" />
-    <Compile Include="Assets\Scripts\Heroes\Hero.cs" />
-    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
-    <Compile Include="Assets\Scripts\Managers\HeroManager.cs" />
-    <Compile Include="Assets\Scripts\Test Scripts\TemporaryDisplayFPS.cs" />
-    <Compile Include="Assets\Scripts\Data\FileDataProvider.cs" />
-    <Compile Include="Assets\Scripts\Capabilities\Capability.cs" />
-    <Compile Include="Assets\Scripts\Temporary\TemporaryBattlefield.cs" />
-    <Compile Include="Assets\Scripts\InventoryItems\InventoryItem.cs" />
-    <Compile Include="Assets\Scripts\Spells\Bash.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\NationPickController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\HighlightToggle.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\AnimatedWindowController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderValueController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\Transform\TransformInRect.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\ExitButtonController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\ScrollController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\ResourceBarController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Domain\Nation.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\WindowController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderPercentController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\BinarySliderController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\PopupWindowController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderStepController.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Domain\NationProperties.cs" />
-    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\EventTriggerInvoker.cs" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Climb\MClimbable.cs" />
+    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Modes\ModeModifier.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\TransformListener.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\BinarySliderController.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scenes\_Utilities\AzureFlyCamera.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MAnimalVariables.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Swim.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\UI\LookAtCamera.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\IK Weapon\IKProfile.cs" />
+    <Compile Include="Assets\Scripts\Data\DataProvider.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\WindowController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Events\MEventListener.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\UI\UIFollowTransform.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureSkyRenderController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\UI\FadeInOutGraphic.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\TransformAnimation.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireUnyielding.cs" />
+    <Compile Include="Assets\Scripts\Spells\NailInTheHead.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\ModeReaction.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\ID\IDs.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Man\RFManDemolition.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\DeltaTransform.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IMAnimator.cs" />
+    <Compile Include="Assets\Scripts\Managers\BattleFieldMovementManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IMLayer.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\ApplyDamageScript.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\CheckVarListener.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Input\MalbersInput.cs" />
+    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXLightFade.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Events\MEvent.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderStepController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MAnimalAIControl.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\EventTriggerInvoker.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Rider\RiderFPC.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\RunTime Collections\RuntimeCollection.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireActivator.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Fall.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IRider.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\IK Weapon\BowCombat.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\IK Weapon\GunCombatFK.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\AI\PointClickData.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\HelpBoxAttribute.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFBackupCluster.cs" />
+    <Compile Include="Assets\Scripts\Spells\Bleed.cs" />
+    <Compile Include="Assets\Scripts\Unity\FaceCamera.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Interactions\MPickUp.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Carriage\PullWagons.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\MAttackTrigger.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\SetLookAtTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MWeaponManager Vars.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureTimeController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\HolsterID.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\MReaction.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
+    <Compile Include="Assets\Scripts\Test Scripts\DataTest.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MRespawner.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\MessageTask.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureWeatherZone.cs" />
+    <Compile Include="Assets\Scripts\Spells\Inferno.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderPercentController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\MaterialListVar.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\ForwardDirToV3.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\MaterialLerp.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireConnectivity.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\AI\PointClick.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\CheckStateDecision.cs" />
+    <Compile Include="Assets\Scripts\Spells\Blink.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFEvent.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Stats\Stats.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\MAIDecision.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Readme\Readme.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\PatrolTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Zone.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Events\MalbersEvents.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\AI\AITarget.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\SoundByMaterial.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\FlagAttribute.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\MAnimalBrain.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\ORDecision.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\IntComparer.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Behaviors\RandomBehavior.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\IntVarListener.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Mount\Mount.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Compatible StA\FPS\MHeadBob.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\BoolVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Camera\MFreeLookCamera.cs" />
+    <Compile Include="Assets\Scripts\Spells\FrostArmor.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\WeaponID.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Input\MInput.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\MExplosion.cs" />
+    <Compile Include="Assets\Scripts\Units\NPC.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MAnimalCallBacks.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\SceneDynamicAddDelete\MB_DynamicAddDeleteExample.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\RunTime Collections\RuntimeGameObjects.cs" />
+    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\SetTargetTask.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\ResourceBarController.cs" />
+    <Compile Include="Assets\Scripts\Unity\SpellCaster.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\StringVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\ID\StatID.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Behaviors\MessagesBehavior.cs" />
+    <Compile Include="Assets\Scripts\Spells\BrutalStrike.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\WaitTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\ID\StanceID.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\GlobalGravity.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireRestriction.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\MProjectile.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\MinMaxRangeAttribute.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireCombine.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\ANDDecision.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFPhysic.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\Holsters.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\MaterialLerpSO.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Events\MessagesSO.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureEffectsController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\ScriptableVar.cs" />
+    <Compile Include="Assets\Scripts\Spells\Bless.cs" />
+    <Compile Include="Assets\Realistic_Waterfall\Scripts\ScrollUV_River.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFDemolitionCluster.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Behaviours\ModeBehaviour.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFLimitations.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\FloatVarListener.cs" />
+    <Compile Include="Assets\Scripts\Spells\ChargedShot.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Cluster\RFFace.cs" />
+    <Compile Include="Assets\Scripts\Spells\HiddenBlade.cs" />
+    <Compile Include="Assets\Scripts\Data\Encryption.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\VarListener.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\SceneRuntimeExample\MB_Example.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Locomotion.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Behaviors\LayersBehavior.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFMesh.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\ScaleBonesFix.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\FireBallEffectM.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFCluster.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireShatter.cs" />
+    <Compile Include="Assets\Scripts\Spells\BangShot.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MWeaponManager Logic.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Cluster\RFTriangle.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Man\RFPooling.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MAnimalLogic.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireVortex.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\RunTime Collections\TransformHook.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MAnimal.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Rider\MountBehavior.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Death.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureUtilities.cs" />
+    <Compile Include="Assets\Scripts\Spells\AuraOfPower.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireRigidRoot.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\StringVarListener.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Rider\DismountBehavior.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\DemolitionEventScript.cs" />
+    <Compile Include="Assets\Scripts\Spells\Spell.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\MaterialPropertyLerpSO.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUIWelcome.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Camera\MProtectCameraFromWallClip.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\ReboneMesh.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFSnapshot.cs" />
+    <Compile Include="Assets\Scripts\Data\DataContainer.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Shatter\RFFragment.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\Dismember.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\UseTransform.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\RunTime Collections\GameObjectHook.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Events\Messages.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Interactions\Pickable.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\Transform\TransformInRect.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MWeapon.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\UI\ValueToString.cs" />
+    <Compile Include="Assets\Scripts\Spells\ChargedStrike.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MBow.cs" />
+    <Compile Include="Assets\Scripts\Units\Unit.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\WaitDecision.cs" />
+    <Compile Include="Assets\Scripts\Unity\CameraFollower.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\SetVarListener.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IWayPoint.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureOverrideObject.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IMDamage.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\FireBreath.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\PopupWindowController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\SwimUnderwater.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\Comment.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Camera\ChangeTarget.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireDebris.cs" />
+    <Compile Include="Assets\StylizedHuman\Scripts\Equipment.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFFragmentProperties.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MSpeed.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\AnimatorEventSounds.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\ChangeSpeedTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\GameObjectVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\ActiveMeshes.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\ColorVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Modes\ModifierDodge.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\ExitButtonController.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireWind.cs" />
+    <Compile Include="Assets\Scripts\Managers\VersionManager.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\PrepareObjectsForDynamicBatching\MB_PrepareObjectsForDynamicBatchingDescription.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MCheckPoint.cs" />
+    <Compile Include="Assets\Scripts\Managers\SceneLoadingManager.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUILandPlay.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Aim\AimTarget.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\GravityReaction.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\StringComparer.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IInteractable.cs" />
+    <Compile Include="Assets\Scripts\Spells\Heal.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\Limb.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Events\UnityEventRaiser.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\SimpleThrow.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFRecord.cs" />
+    <Compile Include="Assets\Scripts\Spells\Disguise.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\BatchPrepareObjectsForDynamicBatching\MB_BatchPrepareObjectsForDynamicBatchingDescription.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MWeaponManager CallBacks.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\RequiredFieldAttribute.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\RunTime Collections\GetRuntimeGameObjects.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\BlendShapePreset.cs" />
+    <Compile Include="Assets\Scripts\Spells\SecretIngredient.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Triggers\TriggerExit.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\AI\FollowTarget.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RayFire.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IAIControl.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\UI\UpVectorTransform.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Tags\ITag.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\RangedFloat.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scenes\_Utilities\AzureSliderToTime.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\LockAxis.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\CheckScriptableVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\StepTrigger.cs" />
+    <Compile Include="Assets\Scripts\Spells\WeakeningShot.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IInputSource.cs" />
+    <Compile Include="Assets\Scripts\Data\EncryptedFileDataProvider.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\MProjectileThrower.cs" />
+    <Compile Include="Assets\Scripts\Spells\AuraOfMagic.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\SliderValueController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Aim\LookAt.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IProjectile.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Behaviours\AttackTriggerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Managers\Log.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\ID\ModeID.cs" />
+    <Compile Include="Assets\Scripts\Spells\SkullCrack.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\SceneRuntimeExample\MB_ExampleSkinnedMeshDescription.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\MalbersEditor.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Modes\Mode.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFFade.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IGravity.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\PublicEnums.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\QuickAlignTask.cs" />
+    <Compile Include="Assets\Scripts\Managers\CameraMovementManager.cs" />
+    <Compile Include="Assets\Scripts\Spells\LeapOfDeath.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Idle.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\TransformVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\PlayModeTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\MReactionsList.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureEnvironmentController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\LayerVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Climb.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\DragonEgg.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\MaterialVar.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Domain\Nation.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Animator\MAnimalAnimatorSync.cs" />
+    <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\MaterialChanger.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Hash.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MStrafe.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFDamage.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\BoolVarListener.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFReferenceDemolition.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Domain\NationProperties.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\SetStanceTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\IntVar.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireMan.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\UnityUtils.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Interactions\MInteractor.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\GizmoVisualizer.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MInventory.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Behaviors\RigidConstraintsB.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\BlendShape.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureWeatherController.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Shatter\RFSurface.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Behaviors\IsKinematicB.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\StateReaction.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\ChanceTask.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireSound.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\EffectManager.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireRigid.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MModeAlign.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Modes\MDirectionalDamage.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Triggers\TriggerProxy.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\AddRigidComponent.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\FloatComparer.cs" />
+    <Compile Include="Assets\Scripts\Managers\SpellManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\BonePreset.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IAim.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\CapsuleColliderPreset.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Tags\Tag.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\IK Weapon\OldIKProfile.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\CurrentWeaponUI.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\ScriptableCoroutine.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFTypes.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\MPivot.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\PlayStateTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Compatible StA\FPS\MMouseLook.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Carriage\PullingHorses.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFSound.cs" />
+    <Compile Include="Assets\Scripts\Spells\AimedShot.cs" />
+    <Compile Include="Assets\Art\Demo\Example.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireRecorder.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Tags\Tags.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IAlign.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\IScene.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFRuntimeCaching.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\AnimatedWindowController.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\JumpBasic.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\ArriveDecision.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Mount\IKReins.cs" />
+    <Compile Include="Assets\Scripts\Spells\LightningBolt.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\CheckStatDecision.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\MDisplayTrajectory.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\AI\MWayPoint.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MWeaponManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\MovementReaction.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\IK Weapon\GunCombatIK.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Mount\MountAI.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireGun.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Tags\AnimationTag.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureThunderEffect.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureWeatherProfile.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Interactions\MInteract.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireSnapshot.cs" />
+    <Compile Include="Assets\Scripts\Spells\SpikeStripe.cs" />
+    <Compile Include="Assets\Scripts\Spells\Roar.cs" />
+    <Compile Include="Assets\Scripts\Unity\AnimationState.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\SpeedReaction.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\SceneRuntimeExample\MB_ExampleMover.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureShaderUniforms.cs" />
+    <Compile Include="Assets\Scripts\Spells\ShieldTrail.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Behaviors\CommentB.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureOverridePropertiesManually.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\StepsManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\MTools.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Shatter\RFShatterAdvanced.cs" />
+    <Compile Include="Assets\Quest.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\State.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Fly.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\CreateScriptableAssetAttribute.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUILoader.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scenes\_Utilities\AzureCameraOrbit.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Stats\ModifyStatSO.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Camera\CameraWallStop.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUIDialog.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\EnforceTypeAttribute.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\ID\StateID.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFParticles.cs" />
+    <Compile Include="Assets\Scripts\Spells\RainOfArrows.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Mount\MountTriggers.cs" />
+    <Compile Include="Assets\Scripts\Units\BattlefieldSimpleUnit.cs" />
+    <Compile Include="Assets\Scripts\Managers\QuestManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Compatible StA\FPS\MRigidbodyFPSController.cs" />
+    <Compile Include="Assets\Scripts\Managers\EnvironmentManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\ISleepController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\InvokeEventTask.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\SwitchBakedObjectsTexture\MB_SwitchBakedObjectsTexture.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\Vector3Var.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MMelee.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireBlade.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\Vector2Var.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\TaskDecision.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFReset.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireBomb.cs" />
+    <Compile Include="Assets\Scripts\Managers\LandMovementManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Cinemachine\CameraInputMapper.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFActivation.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Triggers\TriggerEnter.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\ResetScriptableVars.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\ComboManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\MalbersAnimationExtensions.cs" />
+    <Compile Include="Assets\Scripts\Unity\WeatherChanger.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Behaviours\ModifierBehaviour.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Attributes Drawers\HideAttribute.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\MTask.cs" />
+    <Compile Include="Assets\Scripts\Spells\Defend.cs" />
+    <Compile Include="Assets\StylizedHuman\Scripts\EquipmentSync.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\MDamageable.cs" />
+    <Compile Include="Assets\Scripts\Spells\SummonWaterElemental.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Timeline\MTimelineManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Interfaces\ICollectable.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\ID\MAction.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\BakeTexturesAtRuntime\BakeTexturesAtRuntime.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Rider\MRider.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Modes\MAttackAligner.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Man\RFMaterial.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\VariableReferenceDrawer.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\Aligner.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Damage\MDamager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Camera\FreeLookCameraState.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\CheckStanceDecision.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\IMWeapon.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\ActivationEventScript.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\HighlightToggle.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireDust.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\ScrollController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Carriage\WagonController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MShootable.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Behaviors\SoundBehavior.cs" />
+    <Compile Include="Assets\Scripts\Heroes\Hero.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Mesh\BoneScaler.cs" />
+    <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFDemolitionMesh.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\CharacterCustomization\MB_SwapShirts.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFShard.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\Vector3VarListener.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\MGameSettings.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\AI\AIWanderArea.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Components\RayfireCluster.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Animator\BlinkEyes.cs" />
+    <Compile Include="Assets\Scripts\Managers\HeroManager.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Camera\FreeLockCameraManager.cs" />
+    <Compile Include="Assets\Scripts\Test Scripts\TemporaryDisplayFPS.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Stats\ModifyStat.cs" />
+    <Compile Include="Assets\MedievalKingdomUI\Scripts\Window\NationPickController.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\LookDecision.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\SlowMotion.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\MAIState.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\RFFlash.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Core\Reaction.cs" />
+    <Compile Include="Assets\Scripts\Data\FileDataProvider.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Jump.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\SpriteVar.cs" />
+    <Compile Include="Assets\MeshBaker\Examples\SkinnedMeshRenderer\MB_SkinnedMeshSceneController.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Shatter\RFCustom.cs" />
+    <Compile Include="Assets\RayFire\Scripts\Classes\Rigid\RFCollapse.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Effects\EffectModifier.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\FloatVar.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Tools\GravityChanger.cs" />
+    <Compile Include="Assets\Scripts\Capabilities\Capability.cs" />
+    <Compile Include="Assets\Scripts\Unity\FakeTorch.cs" />
+    <Compile Include="Assets\Scripts\Temporary\TemporaryBattlefield.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Decisions\CheckModeDecision.cs" />
+    <Compile Include="Assets\Scripts\InventoryItems\InventoryItem.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Reactions\StanceReaction.cs" />
+    <Compile Include="Assets\Azure[Sky] Dynamic Skybox\Scripts\AzureFogScattering.cs" />
+    <Compile Include="Assets\Scripts\Spells\Bash.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Events\UnityEventExit.cs" />
+    <Compile Include="Assets\Scripts\Unity\HeroUI.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Scriptables\RunTime Collections\AddRuntimeGameObjects.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\AI Brain\Tasks\MoveStopTask.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Timeline\AnimatorMoveTimelineFixer.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Aim\Aim.cs" />
+    <Compile Include="Assets\Malbers Animations\Common\Scripts\Input\MobileJoystick.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
     <None Include="Assets\MedievalKingdomUI\Shaders\Fluid.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Mask8Toon.shader" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Lighting.hlsl" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Pipeline.hlsl" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Features.hlsl" />
+    <None Include="Assets\StylizedWater2\Shaders\StylizedWater2.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\cutout bumped specular colormasked.shader" />
+    <None Include="Assets\Art\Shaders\Distortion.shader" />
     <None Include="Assets\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\TriForge Assets\Top Down - Fantasy Forest - URP\Shaders\Water.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\DragonEggs_Shader.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\animated_grass_shader2.shader" />
     <None Include="Assets\MedievalKingdomUI\Shaders\Blur.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Color4x2.shader" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\FogScattering.shader" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\EmptySky.shader" />
+    <None Include="Assets\StylizedHuman\Shaders\S_HumanMale_Body.shader" />
+    <None Include="Assets\RayFire\Plugins\Android\RFLib_DotNet_2018_andr.dll" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Color4x4.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\Bumped Specular colormasked.shader" />
+    <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_CNative_2018.dll" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Mask4Toon.shader" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\ForwardPass.hlsl" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Tesselation.hlsl" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Common.hlsl" />
+    <None Include="Assets\MeshBaker\Resources\Shaders\AlbedoShader.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Mask4Realistic.shader" />
+    <None Include="Assets\MeshBaker\Release Notes.txt" />
     <None Include="Assets\TriForge Assets\Top Down - Fantasy Forest - URP\Shaders\TreeLod.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Golem Shader.shader" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Fog.hlsl" />
+    <None Include="Assets\Art\README.txt" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\animated_flags_shader.shader" />
+    <None Include="Assets\Realistic_Waterfall\Shaders\ParticlesUnlit.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Fur.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Color3x3.shader" />
+    <None Include="Assets\StylizedWater2\Shaders\WaterTransparencyMask.shader" />
+    <None Include="Assets\Realistic_Waterfall\Realistic Waterfall - Readme.txt" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Color4x3.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Wind Shader.shader" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\Transparent\ParticleMultiply.shader" />
+    <None Include="Assets\StylizedHuman\README.txt" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\WeatherParticles.shader" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\StaticClouds.shader" />
+    <None Include="Assets\FantasyDungeon\Heroes\Warriors\Warrior_2\Materials\DoubleSide.shader" />
+    <None Include="Assets\Art\Shaders\Effect-Add(DistortionTex).shader" />
+    <None Include="Assets\FantasyDungeon\Humans\Wizards\Wizard\Materials\DoubleSide.shader" />
+    <None Include="Assets\RayFire\Plugins\Windows\x86\RFLib_CNative_2018_x86.dll" />
+    <None Include="Assets\Art\Shaders\UVAlphaBlendMask.shader" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Input.hlsl" />
     <None Include="Assets\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\DynamicClouds.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\AnisotropicCircular.shader" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Vertex.hlsl" />
+    <None Include="Assets\MeshBaker\Resources\Shaders\NormalMapShader.shader" />
+    <None Include="Assets\RayFire\Info\FAQ.txt" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\Transparent\UnlitAlpha.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\AnisotropicWard.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\MWater2.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\Documentation\Description.txt" />
     <None Include="Assets\TriForge Assets\Top Down - Fantasy Forest - URP\Shaders\StandardCullOff.shader" />
     <None Include="Assets\TriForge Assets\Top Down - Fantasy Forest - URP\Shaders\TreeTopDown.shader" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\Transparent\ParticleAlphaBlend.shader" />
+    <None Include="Assets\RayFire\Plugins\Windows\x86\RFLib_DotNet_2018_x86.dll" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\UnderwaterShading.hlsl" />
+    <None Include="Assets\RayFire\Plugins\Ios\RFLib_DotNet_2018_ios.dll" />
+    <None Include="Assets\MeshBaker\README.txt" />
+    <None Include="Assets\RayFire\Info\CHANGELOG.txt" />
     <None Include="Assets\TriForge Assets\Top Down - Fantasy Forest - URP\Shaders\Flame.shader" />
+    <None Include="Assets\RayFire\Plugins\Mac\RFLib_DotNet_2018_osx.dll" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\Transparent\AzureFogCore.cginc" />
+    <None Include="Assets\RayFire\Info\README.txt" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Color4x4 v2.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Color4x2 Emission.shader" />
+    <None Include="Assets\MeshBaker\Examples\CharacterCustomization\CreditForModel.txt" />
+    <None Include="Assets\StylizedHuman\Shaders\S_HumanFemale_Body.shader" />
     <None Include="Assets\modular_fantasy_village_asset_pack\custom shaders\cutout bumped specular colormasked glow.shader" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\Waves.hlsl" />
+    <None Include="Assets\StylizedHuman\Shaders\S_Eye.shader" />
+    <None Include="Assets\Rocks\IMPORTANT.txt" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\SimpleOutline.shader" />
+    <None Include="Assets\Art\Effect\Shaderforge\Particle Add.shader" />
+    <None Include="Assets\Art\Shaders\UVAlphaAddMask.shader" />
+    <None Include="Assets\Azure[Sky] Dynamic Skybox\Shaders\Transparent\ParticleAdd.shader" />
+    <None Include="Assets\Malbers Animations\Common\Shaders\Mask8Realistic.shader" />
+    <None Include="Assets\RayFire\Info\License.txt" />
+    <None Include="Assets\Malbers Animations\Common\Fonts\OpenSans\License!.txt" />
+    <None Include="Assets\StylizedWater2\Shaders\Libraries\URP.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -374,14 +828,29 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.13f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.3.5\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.3.5\Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.6.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.3.5\Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="clipper_library">
+      <HintPath>Library\PackageCache\com.unity.cinemachine@2.7.1\Runtime\ThirdParty\clipper_library.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RFLib_DotNet_2018">
+      <HintPath>Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.13f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -749,11 +1218,11 @@
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Base">
-      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -803,6 +1272,12 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
@@ -812,23 +1287,38 @@
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
@@ -844,6 +1334,22 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{31AC7B6E-AA87-33A5-E65A-8438280DF905}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="MeshBakerEditor.csproj">
+      <Project>{A0314A05-F483-A510-1762-6BFA32B24FD7}</Project>
+      <Name>MeshBakerEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="MeshBakerCore.csproj">
+      <Project>{F18C64D2-2600-5178-A4D9-14CB8044D3D0}</Project>
+      <Name>MeshBakerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="sc.stylizedwater2.editor.csproj">
+      <Project>{6892FF12-61FB-5E95-4DFA-EEBE865BE983}</Project>
+      <Name>sc.stylizedwater2.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="sc.stylizedwater2.runtime.csproj">
+      <Project>{7413BD29-CE96-F644-65C1-B056F88B68B3}</Project>
+      <Name>sc.stylizedwater2.runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

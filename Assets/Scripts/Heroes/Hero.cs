@@ -1,173 +1,61 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Hero : Unit
 {
-	public enum HeroClass { Paladin, Mage, Archer, Thief, Warrior };
+	public enum HeroClass { Warrior, Mage, Archer, Thief, Priest };
 	public enum HeroSex { Male, Female };
 
-	private Spell[] spells;
-	private int experience;	
-	private int experienceToLevel = 1000;	
-	private int level;
-	private HeroClass heroClass;
-	private HeroSex sex;
-	private int skillPoints;
-	private int manaCapacity;
-	private float remainingMana;
-
 	public delegate void LevelUpHandler(int level);
-	
+
+	public SpellManager SpellMgr;
 	public LevelUpHandler OnLevelUp = null;
-	
+	public Spell[] Spells;
+
 	// Inventory
 
-	public int Experience
-	{
-		get
-		{
-			return experience;
-		}
-	}
-	
-	public int ExperienceToLevel
-	{
-		get
-		{
-			return experienceToLevel;
-		}
-	}
+	public int Experience;
+	public int ExperienceToLevel;
+	public HeroSex Sex;
+	public int Level;
+	public HeroClass Class;
+	public int SkillPoints;
 
-	public HeroSex Sex
-	{ 
-		get
-        {
-			return sex;
-        }
-	}
-		
-	public int Level
-	{
-		get
-		{
-			return level;
-		}
-	}
-	
-	private HeroClass Class
-	{
-		get
-		{
-			return heroClass;
-		}
-	}
-
-	public Spell[] Spells
-	{
-		get
-		{
-			return spells;
-		}
-	}
-
-	public int SkillPoints
-	{
-		get
-		{
-			return skillPoints;
-		}
-	}
-
-	public int ManaCapacity
+    private void Start()
     {
-		get
-        {
-			return manaCapacity;
-		}
-    }
-
-	public float RemainingMana
-    {
-		get
-        {
-			return remainingMana;
-		}
-		set
-        {
-			remainingMana = value;
-        }
-    }
-
-	public Hero(string name, string avatarFile, int hitPoints, int strength, int damageMin, int damageMax, int armor, float luck, float moveSpeed, float attackSpeed, HeroClass heroClass, int experienceToLevel, HeroSex sex) : base(name, avatarFile, hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed)
-	{
-		this.experienceToLevel = experienceToLevel;
-		this.heroClass = heroClass;
-		this.sex = sex;
-		experience = 0;
-		level = 1;
-
 		AutoAddSpells();
 	}
 
-	public Hero(string name, string avatarFile, int hitPoints, int strength, int damageMin, int damageMax, int armor, float luck, float moveSpeed, float attackSpeed, HeroClass heroClass, int experienceToLevel, HeroSex sex, int experience, int level) : base(name, avatarFile, hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed)
-	{
-		this.experienceToLevel = experienceToLevel;
-		this.heroClass = heroClass;
-		this.experience = experience;
-		this.level = level;
-		this.sex = sex;
-
-		AutoAddSpells();
-	}
-
-	private void AutoAddSpells()
+    private void AutoAddSpells()
 	{
 		List<Spell> temporarySpells = new List<Spell>();
-		SpellManager spellManager = SpellManager.GetInstance();
-		switch (heroClass)
+		switch (Class)
 		{
 			case HeroClass.Warrior:
-				manaCapacity = 35;
-
-				temporarySpells.Add(spellManager.Find(1001));
-				temporarySpells.Add(spellManager.Find(1002));
-				temporarySpells.Add(spellManager.Find(1003));
-				temporarySpells.Add(spellManager.Find(1004));
-				temporarySpells.Add(spellManager.Find(1005));
+				temporarySpells.Add(SpellMgr.Find(1001));
+				temporarySpells.Add(SpellMgr.Find(1102));
+				temporarySpells.Add(SpellMgr.Find(1006));
 				break;
 			case HeroClass.Mage:
-				manaCapacity = 90;
-
-				temporarySpells.Add(spellManager.Find(2001));
-				temporarySpells.Add(spellManager.Find(2002));
-				temporarySpells.Add(spellManager.Find(2003));
-				temporarySpells.Add(spellManager.Find(2004));
-				temporarySpells.Add(spellManager.Find(2005));
-				break;
-			case HeroClass.Archer:
-				manaCapacity = 40;
-
-				temporarySpells.Add(spellManager.Find(3001));
-				temporarySpells.Add(spellManager.Find(3002));
-				temporarySpells.Add(spellManager.Find(3003));
-				temporarySpells.Add(spellManager.Find(3004));
-				temporarySpells.Add(spellManager.Find(3005));
+				temporarySpells.Add(SpellMgr.Find(2002));
+				temporarySpells.Add(SpellMgr.Find(2011));
+				temporarySpells.Add(SpellMgr.Find(2023));
 				break;
 		}
 
-		remainingMana = manaCapacity;
-		spells = temporarySpells.ToArray();
+		Spells = temporarySpells.ToArray();
 	}
 
 	public void AddExperience(int amount)
 	{
-		if(experience + amount > (level + 1) * experienceToLevel)
+		if(Experience + amount > (Level + 1) * ExperienceToLevel)
 		{
-			level += 1;			
+			Level += 1;			
 			
 			if(OnLevelUp != null)
 			{
-				OnLevelUp(level);
+				OnLevelUp(Level);
 			}
 		}
 	}
@@ -175,11 +63,31 @@ public class Hero : Unit
 	// TODO: Specify where to use skill point
 	public void UseSkillPointFor()
 	{
-		if(skillPoints <= 0)
+		if(SkillPoints <= 0)
 		{
 			return;
 		}
 		
-		skillPoints -= 1;
+		SkillPoints -= 1;
 	}	
+
+	public void CastSpell(int id, out float cooldown, out float globalCooldown)
+    {
+        for (int i = 0; i < Spells.Length; i++)
+        {
+			if(Spells[i].SpellId == id)
+            {
+				Spells[i].SetCaster(gameObject);
+				Spells[i].Cast();
+
+				cooldown = Spells[i].CoolDown.Length <= 0 ? 0 : Spells[i].CoolDown[Spells[i].CurrentLevel - 1];
+				globalCooldown = Spells[i].GlobalCoolDown.Length <= Spells[i].CurrentLevel - 1 ? 0 : Spells[i].GlobalCoolDown[Spells[i].CurrentLevel - 1];
+
+				return;
+			}
+        }
+
+		cooldown = 0;
+		globalCooldown = 0;
+	}
 }

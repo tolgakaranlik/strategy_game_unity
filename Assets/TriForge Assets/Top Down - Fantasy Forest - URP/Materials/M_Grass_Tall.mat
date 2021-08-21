@@ -71,6 +71,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
     - _BumpScale: 1
@@ -81,18 +82,18 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MainTextureBrightness: 0.8
+    - _MainTextureBrightness: 0.16
     - _Metallic: 0
     - _Mode: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Smoothness: 0.508
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TopBrightness: 1
+    - _TopBrightness: 10
     - _UVSec: 0
-    - _WindNoiseScale: 0.3
+    - _WindNoiseScale: 0.715
     - _WindStrength: 1.24
     - _ZWrite: 1
     - __dirty: 0
@@ -100,3 +101,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _WindAxisXZ: {r: 0, g: 0, b: 1, a: 0}
+  m_BuildTextureStacks: []

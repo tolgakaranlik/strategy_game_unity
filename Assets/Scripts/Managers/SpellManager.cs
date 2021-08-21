@@ -28,6 +28,18 @@ public class SpellManager : MonoBehaviour
         
     }
 
+    public void Cast(int spellId)
+    {
+        for (int i = 0; i < Spells.Count; i++)
+        {
+            if(Spells[i].SpellId == spellId)
+            {
+                Spells[i].Cast();
+                return;
+            }
+        }
+    }
+
     public static SpellManager GetInstance()
     {
         return instance;
@@ -47,9 +59,9 @@ public class SpellManager : MonoBehaviour
         {
             for (int j = i + 1; j < Spells.Count; j++)
             {
-                if(Spells[i].Id == Spells[j].Id)
+                if(Spells[i].SpellId == Spells[j].SpellId)
                 {
-                    Debug.LogWarning("Duplicate spell IDs found: " + Spells[i].Id + " (" + Spells[i].Name + "," + Spells[j].Name + ")");
+                    Debug.LogWarning("Duplicate spell IDs found: " + Spells[i].SpellId + " (" + Spells[i].Name + "," + Spells[j].Name + ")");
                     result = false;
                 }
             }
@@ -62,7 +74,7 @@ public class SpellManager : MonoBehaviour
     {
         for (int i = 0; i < Spells.Count; i++)
         {
-            if (Spells[i].Id == id)
+            if (Spells[i].SpellId == id)
             {
                 return Spells[i];
             }

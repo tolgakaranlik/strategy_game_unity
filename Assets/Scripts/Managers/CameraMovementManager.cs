@@ -141,7 +141,7 @@ public class CameraMovementManager : MonoBehaviour
         //MainCam.transform.position = transform.position - FollowDistance;
         if (!Input.GetMouseButton(0))
         {
-            MainCam.transform.DOMove(transform.position - FollowDistance, 0.3f).SetEase(Ease.Linear);
+            //MainCam.transform.DOMove(transform.position - FollowDistance, 0.3f).SetEase(Ease.Linear);
         } else
         {
             MainCam.transform.position = transform.position - FollowDistance;
@@ -154,12 +154,15 @@ public class CameraMovementManager : MonoBehaviour
     {
         float old = FollowDistance.y;
         FollowDistance.y -= deltaMagnitudeDiff * speed;
-        if(FollowDistance.y < ZoomMinBound)
+
+        if (FollowDistance.y < ZoomMinBound)
         {
             FollowDistance.y = ZoomMinBound;
         } else if (FollowDistance.y > ZoomMaxBound)
         {
             FollowDistance.y = ZoomMaxBound;
         }
+
+        MainCam.transform.DOMove(transform.position - FollowDistance, 0.3f).SetEase(Ease.Linear);
     }
 }

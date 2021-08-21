@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using System;
+using UnityEngine.UI;
 
 /// <summary>
 ///
@@ -14,14 +17,104 @@ using UnityEngine;
 /// </summary>
 public class SummonWaterElemental : Spell
 {
+    GameObject elemental = null;
+    int Duration = 10;
+    int Life = 60;
+
     public override void Cast()
     {
-        throw new System.NotImplementedException();
+        GameObject caster = GetCaster();
+        if(caster == null)
+        {
+            Debug.LogWarning("Summon Water Elemental spell needs a caster");
+            return;
+        }
+
+        StartCoroutine(SummonElemental(caster));
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SummonElemental(GameObject caster)
     {
-        
+        if(elemental != null)
+        {
+            StartCoroutine(DestroyElemental(caster));
+        }
+
+        Animator anim = caster.GetComponent<Animator>();
+        anim.CrossFade("Magic2", 0.01f);
+
+        yield return new WaitForSeconds(1.0f);
+
+        Vector3 position = caster.transform.position;
+        elemental = Instantiate(Visuals[0], position + caster.transform.forward * 10 - caster.transform.up * 5, Quaternion.LookRotation(caster.transform.forward, caster.transform.up), caster.transform.parent);
+        var blast = Instantiate(Visuals[1], elemental.transform.position + Vector3.up * 5 - Vector3.forward, Quaternion.LookRotation(caster.transform.forward, caster.transform.up), elemental.transform);
+        blast.transform.localScale = Vector3.one * 1.5f;
+
+        elemental.transform.localScale = Vector3.zero;
+        elemental.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        elemental.transform.DOLocalMoveY(11, 0);
+        elemental.transform.DOScale(3.25f, 0.5f);
+        //elemental.transform.SetParent(null);
+
+        blast.transform.rotation = Quaternion.Euler(new Vector3(-90, 0, 0));
+        Destroy(blast, 2.1f);
+
+        Duration = 10;
+        switch(SpellLevel)
+        {
+            case 2:
+                Duration = 17;
+                Life = 90;
+                break;
+            case 3:
+                Duration = 30;
+                Life = 150;
+                break;
+        }
+
+        StartCoroutine(SummonElementalNow(caster));
+    }
+
+    IEnumerator DestroyElemental(GameObject caster)
+    {
+        elemental.transform.DOScale(0f, 0.5f);
+
+        var blast = Instantiate(Visuals[1], Vector3.zero, Quaternion.LookRotation(caster.transform.forward, caster.transform.up), elemental.transform);
+        blast.transform.rotation = Quaternion.Euler(new Vector3(-90, 0, 0));
+        Destroy(blast, 1);
+
+        yield return new WaitForSeconds(1);
+
+        Destroy(elemental);
+        elemental = null;
+    }
+
+    IEnumerator SummonElementalNow(GameObject caster)
+    {
+        Image imgLifeSlider = elemental.transform.Find("Canvas/ImgSliderBG/ImgSlider").GetComponent<Image>();
+
+        for (int i = 0; i < Duration * 10; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            if (elemental == null)
+            {
+                yield break;
+            }
+
+            try
+            {
+                imgLifeSlider.fillAmount = Mathf.Max(0, imgLifeSlider.fillAmount - 1f / (Duration * 10));
+                if (imgLifeSlider.fillAmount <= 0)
+                {
+                    break;
+                }
+            } catch
+            {
+                // falls to this state when events not synced properly
+                yield break;
+            }
+        }
+
+        StartCoroutine(DestroyElemental(caster));
     }
 }

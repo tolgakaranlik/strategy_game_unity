@@ -4,3 +4,14 @@
 /obj
 /Temp
 /*.apk
+/WindowsBuild
+/UserSettings
+/sc.stylizedwater2.runtime.csproj
+/sc.stylizedwater2.editor.csproj
+/MeshBakerEditor.csproj
+/MeshBakerCore.csproj
+/knh_urp_toon_mapping.txt
+/knh_land2_mapping.txt
+/knh_land1_mapping.txt
+/Assets
+/Assembly-CSharp-Editor.csproj

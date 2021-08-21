@@ -9,7 +9,7 @@ using UnityEngine;
 ///  Modification History:
 ///  -----------------------------------------------------------
 ///
-/// This is the implementation of Bash spell from Warrior class
+/// This is the implementation of Fireball spell from Mage class
 /// 
 /// </summary>
 public class Fireball : Spell

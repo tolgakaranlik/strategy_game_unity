@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -16,20 +17,25 @@ public abstract class Capability : MonoBehaviour
 	private string capabilitName;
 	private string description;
 	private string avatarFile;
-	private float[] coolDown = null;
-	private float coolDownRemaining = 0;
 	private bool autoCast = false;
 	private bool autoCastAvailable = false;
 	private int id = 0;
-	private int currentLevel = 1;
-	private int maxLevel = 5;
 	private string[] levelDescriptions;
+	private GameObject caster = null;
+
+	public float[] CoolDown = null;
+	public float[] GlobalCoolDown = null;
+	public int CurrentLevel = 1;
+	public int MaxLevel = 3;
 
 	public delegate void CastHandler();
 	public delegate void EnableHandler(bool enabled);
 	
 	public CastHandler OnCast = null;
 	public EnableHandler OnEnabled = null;
+
+	[HideInInspector]
+	public Unit Target = null;
 
 	public int Id
 	{
@@ -38,27 +44,6 @@ public abstract class Capability : MonoBehaviour
 			return id;
 		}
 	}
-
-	public int CurrentLevel
-	{
-		get
-		{
-			return currentLevel;
-		}
-		set
-        {
-			currentLevel = value;
-		}
-	}
-
-	public int MaxLevel
-    {
-        get
-        {
-			return maxLevel;
-
-		}
-    }
 
 	public string Name
 	{
@@ -75,26 +60,6 @@ public abstract class Capability : MonoBehaviour
 			return description;
         }
     }
-	
-	public float[] CoolDown
-	{
-		get
-		{
-			return coolDown;
-		}
-	}
-
-	public float CoolDownRemaining
-	{
-		get
-		{
-			return coolDownRemaining;
-		}
-		set
-        {
-			coolDownRemaining = value;
-		}
-	}
 
 
 	public string AvatarFile
@@ -143,10 +108,9 @@ public abstract class Capability : MonoBehaviour
 		this.capabilitName = name;
 		this.description = description;
 		this.avatarFile = avatarFile;
-		this.coolDown = coolDown;
-		this.coolDownRemaining = 0;
+		CoolDown = coolDown;
 
-		levelDescriptions = new string[maxLevel];
+		levelDescriptions = new string[MaxLevel];
 	}
 
 	public void Init(int id, string name, string description, string avatarFile)
@@ -155,9 +119,8 @@ public abstract class Capability : MonoBehaviour
 		this.capabilitName = name;
 		this.description = description;
 		this.avatarFile = avatarFile;
-		this.coolDownRemaining = 0;
 
-		levelDescriptions = new string[maxLevel];
+		levelDescriptions = new string[MaxLevel];
 	}
 
 	public void Init(int id, string name, string description, string avatarFile, float[] coolDown)
@@ -166,10 +129,9 @@ public abstract class Capability : MonoBehaviour
 		this.capabilitName = name;
 		this.description = description;
 		this.avatarFile = avatarFile;
-		this.coolDown = coolDown;
-		this.coolDownRemaining = 0;
+		CoolDown = coolDown;
 
-		levelDescriptions = new string[maxLevel];
+		levelDescriptions = new string[MaxLevel];
 	}
 
 	public void SetLevelDescription(int level, string description)
@@ -186,4 +148,34 @@ public abstract class Capability : MonoBehaviour
 	public abstract void Cast();
 
 	public abstract void Init();
+
+	public void SetCaster(GameObject caster)
+    {
+		this.caster = caster;
+    }
+
+	public GameObject GetCaster()
+    {
+		return caster;
+    }
+
+	public Transform FindDeepChild(Transform aParent, string aName)
+	{
+		foreach (Transform child in aParent)
+		{
+			if (child.name == aName)
+			{
+				return child;
+			}
+
+			var result = FindDeepChild(child, aName);
+			if (result != null)
+			{
+				return result;
+			}
+
+		}
+
+		return null;
+	}
 }

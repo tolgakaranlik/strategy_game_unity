@@ -1,3 +1,4 @@
+using UnityEngine;
 /// <summary>
 ///
 ///  Author: Tolga K, 07/2021
@@ -10,7 +11,12 @@
 /// </summary>
 public abstract class Spell : Capability
 {
+    public enum SpellTarget { Random, UserSelected };
+
     public int SpellId = 1001;
+    public int SpellLevel = 1;
+    public GameObject[] Visuals;
+    public SpellTarget TargetType = SpellTarget.Random;
 
     public string SpellName = "";
     public string SpellDescription = "";
@@ -20,7 +26,6 @@ public abstract class Spell : Capability
     public string Level2Desc = "";
     public string Level3Desc = "";
     public string Level4Desc = "";
-    public string Level5Desc = "";
 
     private int manaCost;
 
@@ -43,8 +48,7 @@ public abstract class Spell : Capability
         SetLevelDescription(0, Level1Desc);
         SetLevelDescription(1, Level2Desc);
         SetLevelDescription(2, Level3Desc);
-        SetLevelDescription(3, Level4Desc);
-        SetLevelDescription(4, Level5Desc);
+        //SetLevelDescription(3, Level4Desc);
     }
 
     // OnCast

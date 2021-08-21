@@ -52,10 +52,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &9073999026407433740
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -136,11 +139,11 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0.11981654, y: 0.4868009, z: 0.004383564}
   m_Size: 2.6426003
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.02185019
+  - screenRelativeHeight: 0.013766863
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8069658221313207599}

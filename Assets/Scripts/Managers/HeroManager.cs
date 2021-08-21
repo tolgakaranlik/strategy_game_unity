@@ -61,7 +61,7 @@ public class HeroManager : MonoBehaviour
                 moveSpeed = 1.85f;
                 attackSpeed = 2.25f;
                 break;
-            case Hero.HeroClass.Paladin:
+            case Hero.HeroClass.Priest:
                 hitPoints = Random.Range(33, 38);
                 strength = Random.Range(5, 8);
                 damageMin = 5;
@@ -79,8 +79,8 @@ public class HeroManager : MonoBehaviour
                 break;
         }
 
-        Hero hero = new Hero(generatedName, "", hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed, heroClass, experienceToLevel, sex, 0, 1);
+        //Hero hero = new Hero(generatedName, "", hitPoints, strength, damageMin, damageMax, armor, luck, moveSpeed, attackSpeed, heroClass, experienceToLevel, sex, 0, 1);
 
-        return hero;
+        return null;
     }
 }
