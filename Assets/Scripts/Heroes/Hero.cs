@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : Unit
+public class Hero : BattlefieldSimpleUnit
 {
 	public enum HeroClass { Warrior, Mage, Archer, Thief, Priest };
 	public enum HeroSex { Male, Female };

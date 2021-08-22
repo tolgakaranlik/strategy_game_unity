@@ -27,9 +27,10 @@ public class Unit : MonoBehaviour
 	public int RemaininigLife;
 	public float MoveSpeed;
 	public float AttackSpeed;
-	public float AttackRange = 1;
+    public float AttackRange = 1;
+    public float AttackRangeOuter = 2;
 
-	public int Armor;
+    public int Armor;
 	public float Luck;
 
 	[HideInInspector]
@@ -49,21 +50,19 @@ public class Unit : MonoBehaviour
     Animator anim;
     GameObject stun;
 
-    // OnDead
-    // OnKilled
-    // OnSpell
-    // OnCommand
-    // OnAttacked
+    protected void Init()
+    {
+        anim = GetComponent<Animator>();
+        var text = transform.Find("Canvas/ImgSliderBG/TxtNumUnits");
 
+        if (text != null)
+        {
+            text.GetComponent<Text>().text = NumUnits.ToString();
+        }
+    }
     private void Start()
     {
-		anim = GetComponent<Animator>();
-		var text = transform.Find("Canvas/ImgSliderBG/TxtNumUnits").GetComponent<Text>();
-
-		if(text != null)
-        {
-			text.text = NumUnits.ToString();
-        }
+        Init();
 	}
 
 	public void Fall()
@@ -142,6 +141,24 @@ public class Unit : MonoBehaviour
         }
 
         //Debug.Log("damage: " + f_damage + ", remainingLife: " + unit.RemaininigLife + ", numUnits: " + unit.NumUnits);
+        // update hero's life gauge from UI
+        Hero hero = gameObject.GetComponent<Hero>();
+        SpellCaster caster;
+        if (hero != null)
+        {
+            var heroButtons = GameObject.Find("/Canvas/Heroes");
+
+            for (int i = 0; i < heroButtons.transform.childCount; i++)
+            {
+                caster = heroButtons.transform.GetChild(i).Find("ImgMagic1").GetComponent<SpellCaster>();
+
+                if (caster != null && caster.Caster == hero)
+                {
+                    heroButtons.transform.GetChild(i).Find("ImgHealth/ImgBar").GetComponent<Image>().DOFillAmount((float)RemaininigLife / HitPoints, 0.3f);
+                    break;
+                }
+            }
+        }
 
         // display number of remaining units
         var text = transform.Find("Canvas/ImgSliderBG/TxtNumUnits");
@@ -192,5 +209,30 @@ public class Unit : MonoBehaviour
         CanMove = true;
         stun.transform.DOScale(0, 0.35f);
         Destroy(stun, 0.4f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        // inner attack range
+        Vector3 point;
+        Gizmos.color = Color.yellow;
+        Vector3 previousPoint = transform.position + Quaternion.Euler(0, 0, 0) * Vector3.forward * AttackRange;
+        for (int i = 1; i <= 36; i++)
+        {
+            point = transform.position + Quaternion.Euler(0, i * 10, 0) * Vector3.forward * AttackRange;
+            Gizmos.DrawLine(previousPoint, point);
+
+            previousPoint = point;
+        }
+
+        Gizmos.color = Color.red;
+        previousPoint = transform.position + Quaternion.Euler(0, 0, 0) * Vector3.forward * AttackRangeOuter;
+        for (int i = 1; i <= 36; i++)
+        {
+            point = transform.position + Quaternion.Euler(0, i * 10, 0) * Vector3.forward * AttackRangeOuter;
+            Gizmos.DrawLine(previousPoint, point);
+
+            previousPoint = point;
+        }
     }
 }
