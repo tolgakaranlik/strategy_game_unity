@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 /// <summary>
 ///
@@ -49,6 +50,7 @@ public class Unit : MonoBehaviour
 
     Animator anim;
     GameObject stun;
+    float oldAnimSpeed = 1;
 
     protected void Init()
     {
@@ -70,6 +72,12 @@ public class Unit : MonoBehaviour
 		anim.CrossFade("Fall", 0.1f);
 
 		CanMove = false;
+    }
+
+    public void Slow()
+    {
+        oldAnimSpeed = anim.GetFloat("animSpeed");
+        anim.SetFloat("animSpeed", oldAnimSpeed / 2f);
     }
 
     public void Stun()
@@ -94,7 +102,10 @@ public class Unit : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-		StartCoroutine(TakeDamageProcess(damage));
+        if (gameObject.activeSelf)
+        {
+            StartCoroutine(TakeDamageProcess(damage));
+        }
     }
 
 	IEnumerator TakeDamageProcess(int damage)
@@ -114,13 +125,17 @@ public class Unit : MonoBehaviour
                     GetComponents<AudioSource>()[1].Play();
 
                     //target.transform.DOLocalMoveY(5.25f, 0.75f).SetEase(Ease.Linear);
-                    Vector3 p = transform.localPosition;
+                    /*Vector3 p = transform.localPosition;
                     p.y = 5.25f;
-                    transform.DOLocalMove(p + transform.forward * 4.5f, 0.75f).SetEase(Ease.Linear);
+                    transform.DOLocalMove(p + transform.forward * 4.5f, 0.75f).SetEase(Ease.Linear);*/
                     gameObject.tag = "Untagged";
 
                     StartCoroutine(Bury(gameObject));
-                    transform.Find("Canvas").gameObject.SetActive(false);
+                    Transform canvas = transform.Find("Canvas");
+                    if (canvas != null)
+                    {
+                        canvas.gameObject.SetActive(false);
+                    }
 
                     // break the loop
                     damage = 0;
@@ -198,17 +213,25 @@ public class Unit : MonoBehaviour
     {
 		yield return new WaitForSeconds(duration);
 
-		CanMove = true;
 		anim.CrossFade("GetUp", 0.1f);
-	}
+
+        yield return new WaitForSeconds(1);
+
+        CanMove = true;
+    }
 
     IEnumerator StartRestoreAfter(float duration)
     {
         yield return new WaitForSeconds(duration);
 
         CanMove = true;
-        stun.transform.DOScale(0, 0.35f);
-        Destroy(stun, 0.4f);
+        anim.SetFloat("animSpeed", oldAnimSpeed);
+
+        if (stun != null)
+        {
+            stun.transform.DOScale(0, 0.35f);
+            Destroy(stun, 0.4f);
+        }
     }
 
     private void OnDrawGizmos()

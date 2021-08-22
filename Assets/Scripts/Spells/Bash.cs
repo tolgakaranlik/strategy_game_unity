@@ -67,7 +67,7 @@ public class Bash : Spell
         {
             dist = Vector3.Distance(caster.transform.position, enemies[i].transform.position);
 
-            if (dist < hero.AttackRange / 1.5f)
+            if (dist < hero.AttackRange * 1.25f)
             {
                 if(!hitDisplayed)
                 {
@@ -84,13 +84,18 @@ public class Bash : Spell
                 unit = enemies[i].GetComponent<Unit>();
 
                 Debug.Log("Enemy " + enemies[i].name + " is stunning...");
+                
                 unit?.Stun();
                 unit?.RestoreAfter(4);
                 unit?.TakeDamage(damage);
+
+                var bfunit = enemies[i].GetComponent<BattlefieldSimpleUnit>();
+                bfunit?.MovementManager.StopAgent(enemies[i]);
+                StartCoroutine(EnableSearchAfter(bfunit, 3));
             }
             else
             {
-                Debug.Log("Enemy " + enemies[i].name + " is out of range (" + dist + " found but " + hero.AttackRange + " required)");
+                Debug.Log("Enemy " + enemies[i].name + " is out of range (" + dist + " found but " + (hero.AttackRange * 1.25f) + " required)");
             }
         }
 
@@ -99,4 +104,12 @@ public class Bash : Spell
 
         anim.CrossFade("Idle", 0.02f);
     }
+
+    IEnumerator EnableSearchAfter(BattlefieldSimpleUnit bfunit, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        bfunit?.EnableSearch();
+    }
+
 }

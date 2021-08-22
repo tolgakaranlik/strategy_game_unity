@@ -508,6 +508,7 @@
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Timeline\AnimatorMoveTimelineFixer.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Aim\Aim.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Input\MobileJoystick.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUIBattleField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />
