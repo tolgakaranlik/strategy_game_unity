@@ -25,6 +25,8 @@ public class Hero : BattlefieldSimpleUnit
     private void Start()
     {
 		AutoAddSpells();
+
+		base.Init();
 	}
 
     private void AutoAddSpells()

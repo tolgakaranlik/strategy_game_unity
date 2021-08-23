@@ -17,6 +17,8 @@ using System;
 
 public class Unit : MonoBehaviour
 {
+    public enum UnitFireType { Melee, Ranged };
+
 	public string Name;
 	public string AvatarFile;
 
@@ -30,6 +32,7 @@ public class Unit : MonoBehaviour
 	public float AttackSpeed;
     public float AttackRange = 1;
     public float AttackRangeOuter = 2;
+    public UnitFireType FireType = UnitFireType.Melee;
 
     public int Armor;
 	public float Luck;
@@ -38,9 +41,11 @@ public class Unit : MonoBehaviour
 	public bool Dead = false;
 	[HideInInspector]
 	public bool GoingForAttack = false;
-	[HideInInspector]
-	public bool CanFire = true;
-	[HideInInspector]
+    [HideInInspector]
+    public bool CanFire = true;
+    [HideInInspector]
+    public bool CastingSpell;
+    [HideInInspector]
 	public bool CanMove = true;
 
 	public Capability[] Capabilities;
@@ -54,12 +59,16 @@ public class Unit : MonoBehaviour
 
     protected void Init()
     {
+        CastingSpell = false;
         anim = GetComponent<Animator>();
-        var text = transform.Find("Canvas/ImgSliderBG/TxtNumUnits");
-
-        if (text != null)
+        if (GetComponent<Hero>() == null)
         {
-            text.GetComponent<Text>().text = NumUnits.ToString();
+            var text = transform.Find("Canvas/ImgSliderBG/TxtNumUnits");
+
+            if (text != null)
+            {
+                text.GetComponent<Text>().text = NumUnits.ToString();
+            }
         }
     }
     private void Start()
@@ -180,7 +189,10 @@ public class Unit : MonoBehaviour
         if (text != null)
         {
             var label = text.GetComponent<Text>();
-            label.text = NumUnits.ToString();
+            if (GetComponent<Hero>() == null)
+            {
+                label.text = NumUnits.ToString();
+            }
 
             // display how much damage you have made
             var newText = Instantiate(label, label.gameObject.transform.position, label.gameObject.transform.rotation, label.transform.parent);

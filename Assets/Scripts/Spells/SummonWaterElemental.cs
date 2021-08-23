@@ -35,7 +35,12 @@ public class SummonWaterElemental : Spell
 
     IEnumerator SummonElemental(GameObject caster)
     {
-        if(elemental != null)
+        Unit unit = caster.GetComponent<Unit>();
+        unit.CastingSpell = true;
+        unit.CanFire = false;
+        unit.CanMove = false;
+
+        if (elemental != null)
         {
             StartCoroutine(DestroyElemental(caster));
         }
@@ -71,6 +76,11 @@ public class SummonWaterElemental : Spell
                 Life = 150;
                 break;
         }
+
+        caster.GetComponent<BattlefieldSimpleUnit>().EnableSearch();
+        unit.CanFire = true;
+        unit.CanMove = true;
+        unit.CastingSpell = false;
 
         StartCoroutine(SummonElementalNow(caster));
     }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -52,6 +52,9 @@
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2021.1.13f1</UnityVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\States\Climb\MClimbable.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
@@ -459,6 +462,7 @@
     <Compile Include="Assets\RayFire\Tutorial\Scripts\ActivationEventScript.cs" />
     <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\HighlightToggle.cs" />
     <Compile Include="Assets\RayFire\Scripts\Components\RayfireDust.cs" />
+    <Compile Include="Assets\Scripts\GUI\GUIBattleField.cs" />
     <Compile Include="Assets\MedievalKingdomUI\Scripts\Controls\ScrollController.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Riding System\Carriage\WagonController.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Weapons\MShootable.cs" />
@@ -508,7 +512,6 @@
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Timeline\AnimatorMoveTimelineFixer.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Utilities\Aim\Aim.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Input\MobileJoystick.cs" />
-    <Compile Include="Assets\Scripts\GUI\GUIBattleField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />
