@@ -12,11 +12,13 @@ using UnityEngine;
 public abstract class Spell : Capability
 {
     public enum SpellTarget { Random, UserSelected };
+    public enum TargetSide { Player, Computer };
 
     public int SpellId = 1001;
     public int SpellLevel = 1;
     public GameObject[] Visuals;
     public SpellTarget TargetType = SpellTarget.Random;
+    public TargetSide Side = TargetSide.Computer;
 
     public string SpellName = "";
     public string SpellDescription = "";
@@ -27,19 +29,7 @@ public abstract class Spell : Capability
     public string Level3Desc = "";
     public string Level4Desc = "";
 
-    private int manaCost;
-
-	public int ManaCost
-	{
-		get
-		{
-			return manaCost;
-		}
-		set
-        {
-			manaCost = value;
-        }
-	}
+    protected GameObject target = null;
 
     public override void Init()
     {
@@ -51,5 +41,72 @@ public abstract class Spell : Capability
         //SetLevelDescription(3, Level4Desc);
     }
 
-    // OnCast
+    public void SetTarget(GameObject target)
+    {
+        this.target = target;
+    }
+
+    public GameObject GetTarget()
+    {
+        if(Side == TargetSide.Computer)
+        {
+            return GetPlayerTarget();
+        } else
+        {
+            return GetCPUTarget();
+        }
+    }
+
+    GameObject GetCPUTarget()
+    {
+        GameObject target = null;
+
+        GameObject[] enemyArmy = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (enemyArmy.Length > 0)
+        {
+            target = enemyArmy[Random.Range(0, enemyArmy.Length)];
+        }
+        else
+        {
+            Debug.LogWarning("POLYMORPH: No AI units could be found");
+        }
+
+        return target;
+    }
+
+    GameObject GetPlayerTarget()
+    {
+        GameObject target = null;
+
+        // auto select target
+        GameObject[] playerArmy = GameObject.FindGameObjectsWithTag("PlayerArmy");
+        GameObject[] playerHeroes = GameObject.FindGameObjectsWithTag("Hero");
+
+        if (playerArmy.Length > 0 && playerHeroes.Length > 0)
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                target = playerArmy[Random.Range(0, playerArmy.Length)];
+            }
+            else
+            {
+                target = playerHeroes[Random.Range(0, playerHeroes.Length)];
+            }
+        }
+        else if (playerArmy.Length > 0 && playerHeroes.Length == 0)
+        {
+            target = playerArmy[Random.Range(0, playerArmy.Length)];
+        }
+        else if (playerArmy.Length == 0 && playerHeroes.Length > 0)
+        {
+            target = playerHeroes[Random.Range(0, playerHeroes.Length)];
+        }
+        else
+        {
+            Debug.LogWarning("POLYMORPH: No player units could be found");
+        }
+
+        return target;
+    }
 }

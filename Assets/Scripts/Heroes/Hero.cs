@@ -9,7 +9,6 @@ public class Hero : BattlefieldSimpleUnit
 
 	public delegate void LevelUpHandler(int level);
 
-	public SpellManager SpellMgr;
 	public LevelUpHandler OnLevelUp = null;
 	public Spell[] Spells;
 

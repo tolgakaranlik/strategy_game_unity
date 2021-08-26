@@ -18,9 +18,14 @@ using UnityEngine.UI;
 public class GUILoader : MonoBehaviour
 {
     public Slider PrgLoading;
+    public string TargetScene = "WelcomeScreen";
 
     void Start()
     {
+        PlayerPrefs.SetFloat("LastPlaceOnLandX", 412);
+        PlayerPrefs.SetFloat("LastPlaceOnLandY", 10);
+        PlayerPrefs.SetFloat("LastPlaceOnLandZ", 412);
+
         PrgLoading.value = 0;
         StartCoroutine(LoadWorldMap());
     }
@@ -29,7 +34,7 @@ public class GUILoader : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        KNHSceneManager.LoadScene("WelcomeScreen", OnLevelLoadProgressChanged);
+        KNHSceneManager.LoadScene(TargetScene, OnLevelLoadProgressChanged);
     }
 
     void OnLevelLoadProgressChanged(float percent)
@@ -39,7 +44,7 @@ public class GUILoader : MonoBehaviour
         if(PrgLoading.value >= 1.0f)
         {
             // Done loading
-            Log.Info("Done loading WelcomeScreen");
+            Log.Info("Done loading " + TargetScene);
         }
     }
 }

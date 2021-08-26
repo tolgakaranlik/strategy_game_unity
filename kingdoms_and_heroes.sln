@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sc.stylizedwater2.runtime", "sc.stylizedwater2.runtime.csproj", "{7413BD29-CE96-F644-65C1-B056F88B68B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sc.stylizedwater2.editor", "sc.stylizedwater2.editor.csproj", "{6892FF12-61FB-5E95-4DFA-EEBE865BE983}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{31AC7B6E-AA87-33A5-E65A-8438280DF905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sc.stylizedwater2.editor", "sc.stylizedwater2.editor.csproj", "{6892FF12-61FB-5E95-4DFA-EEBE865BE983}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{33C807BF-3DFF-3A3B-9F5F-8B776597427C}"
 EndProject
@@ -33,14 +33,14 @@ Global
 		{7413BD29-CE96-F644-65C1-B056F88B68B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7413BD29-CE96-F644-65C1-B056F88B68B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7413BD29-CE96-F644-65C1-B056F88B68B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Release|Any CPU.Build.0 = Release|Any CPU
 		{31AC7B6E-AA87-33A5-E65A-8438280DF905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{31AC7B6E-AA87-33A5-E65A-8438280DF905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31AC7B6E-AA87-33A5-E65A-8438280DF905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31AC7B6E-AA87-33A5-E65A-8438280DF905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6892FF12-61FB-5E95-4DFA-EEBE865BE983}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33C807BF-3DFF-3A3B-9F5F-8B776597427C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33C807BF-3DFF-3A3B-9F5F-8B776597427C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33C807BF-3DFF-3A3B-9F5F-8B776597427C}.Release|Any CPU.ActiveCfg = Release|Any CPU

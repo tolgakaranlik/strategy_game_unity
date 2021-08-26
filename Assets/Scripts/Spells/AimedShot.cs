@@ -16,12 +16,11 @@ public class AimedShot : Spell
 {
     public override void Cast()
     {
-        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Cast(GameObject target)
     {
-        
+        Cast();
     }
+
 }

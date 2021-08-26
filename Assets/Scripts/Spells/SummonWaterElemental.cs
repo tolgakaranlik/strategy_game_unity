@@ -33,6 +33,11 @@ public class SummonWaterElemental : Spell
         StartCoroutine(SummonElemental(caster));
     }
 
+    public override void Cast(GameObject target)
+    {
+        Cast();
+    }
+
     IEnumerator SummonElemental(GameObject caster)
     {
         Unit unit = caster.GetComponent<Unit>();

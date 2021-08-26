@@ -109,15 +109,15 @@ public class Unit : MonoBehaviour
         StartCoroutine(StartRestoreAfter(recoveryTime));
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Unit attacker)
     {
         if (gameObject.activeSelf)
         {
-            StartCoroutine(TakeDamageProcess(damage));
+            StartCoroutine(TakeDamageProcess(damage, attacker));
         }
     }
 
-	IEnumerator TakeDamageProcess(int damage)
+	IEnumerator TakeDamageProcess(int damage, Unit attacker)
     {
         int f_damage = damage;
 
@@ -129,14 +129,25 @@ public class Unit : MonoBehaviour
                 {
                     // kill the unit
                     Dead = true;
-                    GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-                    GetComponent<Animator>().CrossFade("Die", 0.01f);
-                    GetComponents<AudioSource>()[1].Play();
+                    if (GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
+                    {
+                        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+                    }
 
-                    //target.transform.DOLocalMoveY(5.25f, 0.75f).SetEase(Ease.Linear);
-                    /*Vector3 p = transform.localPosition;
-                    p.y = 5.25f;
-                    transform.DOLocalMove(p + transform.forward * 4.5f, 0.75f).SetEase(Ease.Linear);*/
+                    GetComponent<Animator>().CrossFade("Die", 0.01f);
+
+                    try
+                    {
+                        GetComponents<AudioSource>()[1].Play();
+                    } catch
+                    {
+
+                    }
+
+                    attacker.CanFire = true;
+                    attacker.gameObject.GetComponent<BattlefieldSimpleUnit>().CurrentTarget = null;
+                    attacker.gameObject.GetComponent<BattlefieldSimpleUnit>().EnableSearch();
+
                     gameObject.tag = "Untagged";
 
                     StartCoroutine(Bury(gameObject));
@@ -147,7 +158,7 @@ public class Unit : MonoBehaviour
                     }
 
                     // break the loop
-                    damage = 0;
+                    RemaininigLife = 0;
                     break;
                 }
                 else
@@ -164,7 +175,6 @@ public class Unit : MonoBehaviour
             }
         }
 
-        //Debug.Log("damage: " + f_damage + ", remainingLife: " + unit.RemaininigLife + ", numUnits: " + unit.NumUnits);
         // update hero's life gauge from UI
         Hero hero = gameObject.GetComponent<Hero>();
         SpellCaster caster;
@@ -209,8 +219,6 @@ public class Unit : MonoBehaviour
 
             Destroy(newText.gameObject, 0.75f);
         }
-
-        // is target a hero?
     }
 
     IEnumerator Bury(GameObject target)

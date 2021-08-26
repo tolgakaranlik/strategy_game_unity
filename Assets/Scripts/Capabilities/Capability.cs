@@ -147,6 +147,8 @@ public abstract class Capability : MonoBehaviour
 	
 	public abstract void Cast();
 
+	public abstract void Cast(GameObject target);
+
 	public abstract void Init();
 
 	public void SetCaster(GameObject caster)

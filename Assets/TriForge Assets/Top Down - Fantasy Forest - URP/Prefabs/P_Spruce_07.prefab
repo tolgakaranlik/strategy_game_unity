@@ -136,7 +136,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5496701085569751550}
-  - screenRelativeHeight: 0.039622564
+  - screenRelativeHeight: 0.05204763
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1913351425228768258}
@@ -291,7 +291,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1

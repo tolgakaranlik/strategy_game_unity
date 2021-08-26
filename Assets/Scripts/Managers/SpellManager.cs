@@ -28,6 +28,19 @@ public class SpellManager : MonoBehaviour
         
     }
 
+    public void Cast(int spellId, GameObject caster)
+    {
+        for (int i = 0; i < Spells.Count; i++)
+        {
+            if (Spells[i].SpellId == spellId)
+            {
+                Spells[i].SetCaster(caster);
+                Spells[i].Cast();
+                return;
+            }
+        }
+    }
+
     public void Cast(int spellId)
     {
         for (int i = 0; i < Spells.Count; i++)

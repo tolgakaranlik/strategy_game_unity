@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Dust_2
   m_Shader: {fileID: 4800000, guid: b7839dad95683814aa64166edc107ae2, type: 3}
-  m_ShaderKeywords: _FADING_ON _SOFTPARTICLES_ON
+  m_ShaderKeywords: _FADING_ON _SOFTPARTICLES_ON _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,6 +19,7 @@ Material:
   disabledShaderPasses:
   - ALWAYS
   - SHADOWCASTER
+  - DepthOnly
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -107,7 +108,7 @@ Material:
     - _BaseColor: {r: 3.0672057, g: 3.0672057, b: 3.0672057, a: 0.92156863}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 3.0672054, g: 3.0672054, b: 3.0672054, a: 0.92156863}
+    - _Color: {r: 3.067206, g: 3.067206, b: 3.067206, a: 0.92156863}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
@@ -123,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 4
+  version: 5

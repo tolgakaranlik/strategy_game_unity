@@ -27,6 +27,11 @@ public class Bash : Spell
         StartCoroutine(Perform(caster));
     }
 
+    public override void Cast(GameObject target)
+    {
+        Cast();
+    }
+
     IEnumerator Perform(GameObject caster)
     {
         Animator anim = caster.GetComponent<Animator>();
@@ -87,7 +92,7 @@ public class Bash : Spell
                 
                 unit?.Stun();
                 unit?.RestoreAfter(4);
-                unit?.TakeDamage(damage);
+                unit?.TakeDamage(damage, caster.GetComponent<Unit>());
 
                 var bfunit = enemies[i].GetComponent<BattlefieldSimpleUnit>();
                 bfunit?.MovementManager.StopAgent(enemies[i]);

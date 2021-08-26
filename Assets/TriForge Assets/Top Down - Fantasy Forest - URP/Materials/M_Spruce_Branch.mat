@@ -87,7 +87,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _MainTextureBrightness: 0.8
+    - _MainTextureBrightness: 1.08
     - _Metallic: 0
     - _Mode: 1
     - _OcclusionStrength: 1
@@ -96,7 +96,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TopBrightness: 7.53
+    - _TopBrightness: 10
     - _UVSec: 0
     - _WindDirectionX: -1
     - _WindDirectionZ: 0
