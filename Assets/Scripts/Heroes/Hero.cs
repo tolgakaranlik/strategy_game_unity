@@ -76,7 +76,7 @@ public class Hero : BattlefieldSimpleUnit
     {
         for (int i = 0; i < Spells.Length; i++)
         {
-			if(Spells[i].SpellId == id)
+			if(Spells[i].SpellId == id && !gameObject.IsDestroyed())
             {
 				Spells[i].SetCaster(gameObject);
 				Spells[i].Cast();

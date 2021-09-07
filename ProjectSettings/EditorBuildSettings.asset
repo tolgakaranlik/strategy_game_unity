@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Loader.unity
     guid: 17b137837c8436a4dbf2780ed9b5e60e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TemporaryLand.unity
     guid: d4b736aacf358034d85d20edc62d88ed
   - enabled: 1
     path: Assets/Scenes/TemporaryArenaFarm.unity
     guid: 74c5216064f21124d9ebe22568114618
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TemporaryArenaCemetary.unity
     guid: 1daf98e3098139b46abacf3e78649102
   - enabled: 0

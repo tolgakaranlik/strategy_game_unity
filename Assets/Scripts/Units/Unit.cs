@@ -192,6 +192,11 @@ public class Unit : MonoBehaviour
                     break;
                 }
             }
+
+            if(RemaininigLife <= 0)
+            {
+                // Disable magic buttons for those who are dead
+            }
         }
 
         // display number of remaining units
@@ -218,6 +223,14 @@ public class Unit : MonoBehaviour
             newText.DOFade(0, 0.75f);
 
             Destroy(newText.gameObject, 0.75f);
+        }
+
+        // display remaining life for water elemental
+        var slider = transform.Find("Canvas/ImgHealthBG/ImgSlider");
+        if(slider != null)
+        {
+            float amnt = Mathf.Clamp(RemaininigLife / (float)HitPoints, 0f, 1f);
+            slider.GetComponent<Image>().DOFillAmount(amnt, 0.2f);
         }
     }
 
