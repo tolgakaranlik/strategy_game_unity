@@ -11,7 +11,7 @@ using UnityEngine;
 /// </summary>
 public abstract class Spell : Capability
 {
-    public enum SpellTarget { Random, UserSelected };
+    public enum SpellTarget { Random, SelectedPoint, SelectedEnemy, SelectedPlayer, SelectedUnit };
     public enum TargetSide { Player, Computer };
 
     public int SpellId = 1001;
@@ -39,6 +39,11 @@ public abstract class Spell : Capability
         SetLevelDescription(1, Level2Desc);
         SetLevelDescription(2, Level3Desc);
         //SetLevelDescription(3, Level4Desc);
+    }
+
+    public virtual void CancelSpell()
+    {
+
     }
 
     public void SetTarget(GameObject target)

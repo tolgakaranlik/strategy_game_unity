@@ -20,8 +20,10 @@ public class Hero : BattlefieldSimpleUnit
 	public int Level;
 	public HeroClass Class;
 	public int SkillPoints;
+	public Vector3 TargetSpellPosition = Vector3.zero;
 
-    private void Start()
+
+	private void Start()
     {
 		AutoAddSpells();
 
@@ -70,23 +72,57 @@ public class Hero : BattlefieldSimpleUnit
 		}
 		
 		SkillPoints -= 1;
-	}	
+	}
 
+	public Spell GetSpellInfo(int id)
+	{
+		for (int i = 0; i < Spells.Length; i++)
+		{
+			if (Spells[i].SpellId == id && gameObject != null && !gameObject.IsDestroyed())
+			{
+				return Spells[i];
+			}
+		}
+
+		return null;
+	}
+
+	public void SetTargetPosition(Vector3 targetPosition)
+    {
+		TargetSpellPosition = targetPosition;
+	}
+
+
+	public virtual void CancelSpell(int id)
+	{
+		for (int i = 0; i < Spells.Length; i++)
+		{
+			if (Spells[i].SpellId == id && gameObject != null && !gameObject.IsDestroyed())
+			{
+				Spells[i].CancelSpell();
+			}
+		}
+	}
+	
 	public void CastSpell(int id, out float cooldown, out float globalCooldown)
     {
-        for (int i = 0; i < Spells.Length; i++)
+		if(!Dead)
         {
-			if(Spells[i].SpellId == id && !gameObject.IsDestroyed())
-            {
-				Spells[i].SetCaster(gameObject);
-				Spells[i].Cast();
+			for (int i = 0; i < Spells.Length; i++)
+			{
+				if (Spells[i].SpellId == id && gameObject != null && !gameObject.IsDestroyed())
+				{
+					Spells[i].SetCaster(gameObject);
+					Spells[i].SetTargetPosition(TargetSpellPosition);
+					Spells[i].Cast();
 
-				cooldown = Spells[i].CoolDown.Length <= 0 ? 0 : Spells[i].CoolDown[Spells[i].CurrentLevel - 1];
-				globalCooldown = Spells[i].GlobalCoolDown.Length <= Spells[i].CurrentLevel - 1 ? 0 : Spells[i].GlobalCoolDown[Spells[i].CurrentLevel - 1];
+					cooldown = Spells[i].CoolDown.Length <= 0 ? 0 : Spells[i].CoolDown[Spells[i].CurrentLevel - 1];
+					globalCooldown = Spells[i].GlobalCoolDown.Length <= Spells[i].CurrentLevel - 1 ? 0 : Spells[i].GlobalCoolDown[Spells[i].CurrentLevel - 1];
 
-				return;
+					return;
+				}
 			}
-        }
+		}
 
 		cooldown = 0;
 		globalCooldown = 0;

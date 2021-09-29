@@ -22,6 +22,8 @@ public abstract class Capability : MonoBehaviour
 	private int id = 0;
 	private string[] levelDescriptions;
 	private GameObject caster = null;
+	
+	protected Vector3 targetPosition = Vector3.zero;
 
 	public float[] CoolDown = null;
 	public float[] GlobalCoolDown = null;
@@ -150,6 +152,11 @@ public abstract class Capability : MonoBehaviour
 	public abstract void Cast(GameObject target);
 
 	public abstract void Init();
+
+	public void SetTargetPosition(Vector3 targetPosition)
+    {
+		this.targetPosition = targetPosition;
+	}
 
 	public void SetCaster(GameObject caster)
     {

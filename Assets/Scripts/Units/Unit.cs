@@ -129,6 +129,8 @@ public class Unit : MonoBehaviour
                 {
                     // kill the unit
                     Dead = true;
+                    CanMove = false;
+
                     if (GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
                     {
                         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -144,9 +146,12 @@ public class Unit : MonoBehaviour
 
                     }
 
-                    attacker.CanFire = true;
-                    attacker.gameObject.GetComponent<BattlefieldSimpleUnit>().CurrentTarget = null;
-                    attacker.gameObject.GetComponent<BattlefieldSimpleUnit>().EnableSearch();
+                    if (attacker != null)
+                    {
+                        attacker.CanFire = true;
+                        attacker.gameObject.GetComponent<BattlefieldSimpleUnit>().CurrentTarget = null;
+                        attacker.gameObject.GetComponent<BattlefieldSimpleUnit>().EnableSearch();
+                    }
 
                     gameObject.tag = "Untagged";
 
@@ -189,13 +194,19 @@ public class Unit : MonoBehaviour
                 if (caster != null && caster.Caster == hero)
                 {
                     heroButtons.transform.GetChild(i).Find("ImgHealth/ImgBar").GetComponent<Image>().DOFillAmount((float)RemaininigLife / HitPoints, 0.3f);
+
+                    if (RemaininigLife <= 0)
+                    {
+                        // Disable magic buttons for those who are dead
+                        caster.GlobalCooldown(float.MaxValue);
+                        heroButtons.transform.GetChild(i).Find("ImgMagic2").GetComponent<SpellCaster>().GlobalCooldown(float.MaxValue);
+                        heroButtons.transform.GetChild(i).Find("ImgMagic3").GetComponent<SpellCaster>().GlobalCooldown(float.MaxValue);
+
+                        StartCoroutine(DeathAnimOfDisplay(heroButtons, i));
+                    }
+
                     break;
                 }
-            }
-
-            if(RemaininigLife <= 0)
-            {
-                // Disable magic buttons for those who are dead
             }
         }
 
@@ -232,6 +243,24 @@ public class Unit : MonoBehaviour
             float amnt = Mathf.Clamp(RemaininigLife / (float)HitPoints, 0f, 1f);
             slider.GetComponent<Image>().DOFillAmount(amnt, 0.2f);
         }
+    }
+
+    IEnumerator DeathAnimOfDisplay(GameObject heroButtons, int i)
+    {
+        heroButtons.transform.GetChild(i).Find("ImgMagic1").DOScale(0, 0.35f);
+        heroButtons.transform.GetChild(i).Find("ImgMagic2").DOScale(0, 0.35f);
+        heroButtons.transform.GetChild(i).Find("ImgMagic3").DOScale(0, 0.35f);
+        heroButtons.transform.GetChild(i).Find("ImgPassive").DOScale(0, 0.35f);
+        heroButtons.transform.GetChild(i).Find("TxtName").gameObject.SetActive(false);
+        heroButtons.transform.GetChild(i).Find("ImgHealth").gameObject.SetActive(false);
+        heroButtons.transform.GetChild(i).Find("Selection")?.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(0.35f);
+
+        heroButtons.transform.GetChild(i).Find("ImgPortrait").GetComponent<RectTransform>().DOAnchorPosX(310f, 0.35f);
+        heroButtons.transform.GetChild(i).Find("ImgPortrait").GetComponent<RectTransform>().DOScale(Vector3.one * 0.85f, 0.35f);
+        heroButtons.transform.GetChild(i).Find("ImgPortrait").GetComponent<Button>().interactable = false;
+
     }
 
     IEnumerator Bury(GameObject target)
